@@ -5,11 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marwan Naili — Developer &amp; Security Researcher</title>
 <meta name="description" content="Marwan Naili — developer and security researcher based in Algiers. Automation, data tooling and security-focused software.">
-<meta name="theme-color" content="#fcfcfb">
+<meta name="theme-color" content="#fafafa">
 <meta property="og:title" content="Marwan Naili — Developer &amp; Security Researcher">
 <meta property="og:description" content="Automation, data tooling and security-focused software.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marwan-naili.me/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23161616'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fcfcfb' font-family='Helvetica,Arial,sans-serif' font-weight='600'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -17,61 +20,73 @@
 <div class="wrap">
 
   <header>
-    <h1>Marwan Naili</h1>
-    <p class="role">Developer &amp; security researcher · Algiers, Algeria</p>
+    <div class="identity">
+      <h1>Marwan Naili</h1>
+      <p class="role">Developer &amp; security researcher · Algiers, Algeria</p>
+      <p class="availability"><span class="dot"></span>Open to new projects</p>
+    </div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section class="intro">
-    <p>I build automation systems, data tooling and security-focused software — mostly Python, plus web and Android. I work remotely with a small number of clients at a time, and I'm currently open to new projects.</p>
+    <p>I build automation systems, data tooling and security-focused software — mostly Python, plus web and Android. I work remotely with a small number of clients at a time.</p>
   </section>
 
-  <section>
-    <h2>Selected work</h2>
+  <section id="work">
+    <p class="section-label">Selected work</p>
+    <div class="work">
 
-    <div class="entry">
-      <p class="entry-title"><a href="https://github.com/hellbound2307/solana-narrative-radar">Solana Narrative Radar</a></p>
-      <p class="entry-desc">Open-source engine that detects emerging ecosystem narratives from on-chain, social and market signals, ranking themes before they trend.</p>
-      <p class="entry-meta">Python · Cloudflare Workers · Open source</p>
-    </div>
+      <article class="project">
+        <h3><a href="https://github.com/hellbound2307/solana-narrative-radar">Solana Narrative Radar</a></h3>
+        <p>Open-source engine that detects emerging ecosystem narratives from on-chain, social and market signals, ranking themes before they trend.</p>
+        <p class="meta">Python · Cloudflare Workers · Open source</p>
+      </article>
 
-    <div class="entry">
-      <p class="entry-title"><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT — exfiltration analysis</a></p>
-      <p class="entry-desc">Reverse-engineering analysis of a malware family's Telegram-based exfiltration channel: payload extraction, protocol reconstruction, indicators of compromise.</p>
-      <p class="entry-meta">Reverse engineering · Threat analysis</p>
-    </div>
+      <article class="project">
+        <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT — exfiltration analysis</a></h3>
+        <p>Reverse-engineering analysis of a malware family's Telegram-based exfiltration channel: payload extraction, protocol reconstruction, indicators of compromise.</p>
+        <p class="meta">Reverse engineering · Threat analysis</p>
+      </article>
 
-    <div class="entry">
-      <p class="entry-title">Automation platforms</p>
-      <p class="entry-desc">Telegram-based storefront and fulfillment pipelines with automated payment detection and order handling, built to run unattended.</p>
-      <p class="entry-meta">Client work · Python · Telegram API</p>
-    </div>
+      <article class="project">
+        <h3>Automation platforms</h3>
+        <p>Telegram-based storefront and fulfillment pipelines with automated payment detection and order handling, built to run unattended.</p>
+        <p class="meta">Client work · Python · Telegram API</p>
+      </article>
 
-    <div class="entry">
-      <p class="entry-title">Mobile application security</p>
-      <p class="entry-desc">Attack-surface analysis of Android applications — exported components, cross-app data flows and authorization boundaries, verified with static and dynamic testing.</p>
-      <p class="entry-meta">Authorized security programs</p>
+      <article class="project">
+        <h3>Mobile application security</h3>
+        <p>Attack-surface analysis of Android applications — exported components, cross-app data flows and authorization boundaries, verified with static and dynamic testing.</p>
+        <p class="meta">Authorized security programs</p>
+      </article>
+
     </div>
   </section>
 
-  <section>
-    <h2>What I do</h2>
+  <section id="services">
+    <p class="section-label">What I do</p>
     <ul class="services">
-      <li><span class="s-title">Automation &amp; bots.</span> Telegram and Discord bots, scheduling, monitoring, payment and fulfillment pipelines.</li>
-      <li><span class="s-title">Scraping &amp; data.</span> Collectors and change-detection monitors; clean datasets from APIs, web apps and documents.</li>
-      <li><span class="s-title">Security.</span> Application security reviews and attack-surface analysis. Authorized engagements only.</li>
-      <li><span class="s-title">OSINT tooling.</span> Tooling that collects and structures data from open sources.</li>
+      <li><b>Automation &amp; bots</b>Telegram and Discord bots, scheduling, monitoring, payment and fulfillment pipelines.</li>
+      <li><b>Scraping &amp; data</b>Collectors and change-detection monitors; clean datasets from APIs, web apps and documents.</li>
+      <li><b>Security</b>Application security reviews and attack-surface analysis. Authorized engagements only.</li>
+      <li><b>OSINT tooling</b>Tooling that collects and structures data from open sources.</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p class="contact-line"><a href="mailto:contact@marwan-naili.me">contact@marwan-naili.me</a></p>
-    <p class="contact-line"><a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <p class="email"><a href="mailto:contact@marwan-naili.me">contact@marwan-naili.me</a></p>
+    <p class="ext"><a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
     <p class="note">I usually reply within a day.</p>
   </section>
 
   <footer>
-    <p>© 2026 Marwan Naili</p>
+    <span>© 2026 Marwan Naili</span>
+    <span>marwan-naili.me</span>
   </footer>
 
 </div>
