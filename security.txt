@@ -1,0 +1,6 @@
+Contact: mailto:security@marwan-naili.me
+Contact: https://marwan-naili.me/research/
+Preferred-Languages: en, fr, ar
+Canonical: https://marwan-naili.me/.well-known/security.txt
+Policy: https://marwan-naili.me/research/#disclosure
+Acknowledgments: https://marwan-naili.me/research/
