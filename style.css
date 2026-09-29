@@ -141,6 +141,13 @@ h2{font-size:19px;font-weight:600;color:var(--text);letter-spacing:-0.02em}
   border:1px solid var(--line-hi);padding:5px 8px;white-space:nowrap;
 }
 
+/* ── inline code ──────────────────────────────────────── */
+code{
+  font:12.5px/1.5 var(--mono);color:var(--text);
+  background:var(--panel-2);border:1px solid var(--line);
+  padding:1px 5px;overflow-wrap:break-word;
+}
+
 /* ── definition list ──────────────────────────────────── */
 .defs{display:grid;grid-template-columns:1fr;gap:0}
 .defs div{
@@ -157,6 +164,8 @@ h2{font-size:19px;font-weight:600;color:var(--text);letter-spacing:-0.02em}
 /* ── panel (disclosure) ───────────────────────────────── */
 .panel{background:var(--panel);border:1px solid var(--line);padding:22px 24px}
 .panel p{font-size:14.5px}
+.panel p + p{margin-top:14px}
+.panel code{margin:0 1px}
 .bullets{margin-top:16px;display:flex;flex-direction:column;gap:10px;list-style:none}
 .bullets li{font-size:14.5px;display:grid;grid-template-columns:96px 1fr;gap:16px}
 .bullets li b{

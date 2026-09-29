@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Establishing duration and linkage on a live impersonation operation — Marwan Naili</title>
+<meta name="description" content="A passive method for establishing infrastructure linkage and duration on a suspected brand-impersonation operation, demonstrated on an Algerian case. Method published with the result.">
+<meta name="theme-color" content="#0b0c0d">
+<meta property="og:title" content="Establishing duration and linkage on a live impersonation operation">
+<meta property="og:description" content="Passive-only method: generator attribution, deployment correlation, and the architectural contradiction test.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marwan-naili.me/research/impersonation-infrastructure-method/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23c8f751' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <h1>Establishing duration and linkage on a live impersonation operation</h1>
+      <p class="role">SECURITY MEASUREMENT · PASSIVE METHOD · CASE RECORD</p>
+      <p class="status"><span class="dot"></span>ALGIERS, DZ · UTC+01:00</p>
+    </div>
+    <nav class="nav">
+      <a href="../">RESEARCH</a>
+      <a href="#limits">LIMITS</a>
+      <a href="#method">METHOD</a>
+    </nav>
+  </header>
+
+  <section>
+    <p class="intro">A passive procedure for taking a suspected brand-impersonation operation from "this looks like phishing" to a documented record of <b>what is linked, since when, and what the code actually does</b> — without touching the operation, its users, or its data. Demonstrated on a live Algerian case. The operator is not named: individual attribution remains unestablished and naming an unattributed party would be an accusation, not a result.</p>
+    <dl class="defs">
+      <div><dt>Status</dt><dd>Live operation, still serving at time of writing. Report filed to brand owner, host and platform; publication follows coordination.</dd></div>
+      <div><dt>Contact attempted</dt><dd>Brand owner (Naftal), host (Vercel abuse), platform (Meta), national CERT. Details withheld until the coordination window closes.</dd></div>
+    </dl>
+  </section>
+
+  <section id="why">
+    <p class="section-label">1 — THE PROBLEM WITH "I FOUND A PHISHING SITE"</p>
+    <div class="panel">
+      <p>Finding a phishing site is trivial and proves nothing. The claims that matter are the ones a report has to survive:</p>
+      <ul class="bullets">
+        <li><b>Linkage</b><span>Are these deployments one operation, or unrelated sites with a similar template?</span></li>
+        <li><b>Duration</b><span>When did this exist? Not "I saw it today" — an interval a third party can verify.</span></li>
+        <li><b>Function</b><span>What does the code do with what it collects? Claims about intent have to rest on the implementation, not on the domain name.</span></li>
+      </ul>
+      <p>Each of these is answerable from public sources alone. The method below is the order I apply, with the test that discriminates a real linkage from a coincidence.</p>
+    </div>
+  </section>
+
+  <section id="method">
+    <p class="section-label">2 — THE PROCEDURE</p>
+    <div class="work">
+
+      <article class="project">
+        <h3>2.1 Generator attribution — cheap, and usually decisive</h3>
+        <span class="tag">observed</span>
+        <p>Check the <code>generator</code> meta tag and the build-artifact naming before anything else. AI site generators emit a machine-readable signature, and their deployment slugs follow a fixed pattern. In this case every page in the operation carried <code>&lt;meta name="generator" content="v0.app"/&gt;</code>.</p>
+        <p>This single observation collapses a lot of speculation. Deployment suffixes that looked like deliberate naming — a sequence of Greek letters across multiple hosts — are the <b>generator's default slug algorithm</b>, not an evasion tactic. A hypothesis that was previously carried as "possible takedown evasion" became refuted: no operator intent is required to explain it.</p>
+        <p class="meta">GENERATOR SIGNATURES · BUILD METADATA · HYPOTHESIS REFUTATION</p>
+      </article>
+
+      <article class="project">
+        <h3>2.2 Deployment correlation by content, not by name</h3>
+        <span class="tag">observed</span>
+        <p>Similar names are not evidence of common ownership. Correlation requires matching artifacts: identical form field sets, identical contact strings, identical component vocabulary, and — the strongest signal — <b>distinct deployment identifiers per host</b>, each with its own server-action hash.</p>
+        <p>Here, two live hosts shared a branding layer and an identical data-collection purpose while carrying independent deployment IDs and independent action IDs. That is a common author or a common template authored once and deployed repeatedly. The distinction matters: it is the difference between "someone copied this" and "someone is running this."</p>
+        <p class="meta">ARTIFACT COMPARISON · DEPLOYMENT IDS · SERVER ACTION HASHES</p>
+      </article>
+
+      <article class="project">
+        <h3>2.3 The architectural contradiction test</h3>
+        <span class="tag">observed</span>
+        <p>The useful question is not "does a payment form look suspicious" — a legitimate merchant checkout also asks for a card. The question is <b>whether the pipeline behind the form can do what the form's own text claims.</b></p>
+        <p>Procedure: retrieve every JavaScript bundle the application loads, extract every absolute URL literal, and enumerate every network destination. Then compare that list against the claims the page makes about itself.</p>
+        <p>In this case, all 14 bundles from both hosts (642&nbsp;KB) were retrieved. The complete set of destinations was framework and library documentation URLs, an analytics script, and the host's own feedback widget — <b>no application endpoint, no data store, no payment gateway of any kind</b>. The page nonetheless told visitors they would pay "through a secure official gateway." That claim has no implementation behind it.</p>
+        <p>The finding is therefore architectural rather than inferential: the page's own reassurance is contradicted by its own code. This is the difference between a domain-logic argument ("tires don't need card details") and a measurement.</p>
+        <p class="meta">BUNDLE ANALYSIS · ENDPOINT ENUMERATION · CLAIM-IMPLEMENTATION MISMATCH</p>
+      </article>
+
+      <article class="project">
+        <h3>2.4 Duration from infrastructure state</h3>
+        <span class="tag">inferred</span>
+        <p>Nobody publishes a deployment timestamp to anonymous callers — the platform API returns 403 and the deployment ID is not a decodable timestamp. Duration has to come from observable state instead.</p>
+        <p>Two derivable signals: the edge cache age reported by the host on each response, and the first nonzero response across all record types for any domain the operation claims. Both are inferences from observed headers, and both should be labelled as such.</p>
+        <p>A domain check is where over-claiming is easiest. A name appearing in the operation's own contact strings is a <b>lead</b>, not an indicator. In this case the domain did not exist at all — WHOIS returned no match and every DNS record type returned NXDOMAIN. The apex zone SOA that appears in those responses is present on every NXDOMAIN for the TLD and is not evidence of a child zone. An inferred registration, published as fact, is the defect a reviewer will find first.</p>
+        <p class="meta">EDGE CACHE AGE · DNS RECORD SWEEP · WHOIS · INFERENCE LABELLING</p>
+      </article>
+
+      <article class="project">
+        <h3>2.5 Independent timestamping before escalation</h3>
+        <span class="tag">method</span>
+        <p>Everything above is worthless if the operation disappears first. Archival to a third-party service must precede any notification, and the artifact hashes must be captured at retrieval time.</p>
+        <p>Order matters: archive, hash, then notify. Notifying first gives the operator the one signal they respond to, and the evidence chain is gone. Where the collected data has no external destination — as established in 2.3 — the host's own records <b>are</b> the evidence chain, which raises the priority of a preservation request from "useful" to "the entire case."</p>
+        <p class="meta">THIRD-PARTY ARCHIVAL · ARTIFACT HASHING · PRESERVATION SEQUENCING</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">3 — WHAT THE METHOD PRODUCES</p>
+    <div class="panel">
+      <p>A record in which each statement carries its own confidence, and the confidence is set by the acquisition method rather than by how convinced the analyst is:</p>
+      <ul class="bullets">
+        <li><b>Observed</b><span>Headers, response bodies, bundle contents, DNS answers, WHOIS output — retrieved and hashed.</span></li>
+        <li><b>Inferred</b><span>Duration from cache age, common authorship from artifact overlap. Labelled, never merged with the above.</span></li>
+        <li><b>Unconfirmed</b><span>Any claim of individual identity. In this case, distribution attribution is high, operational attribution is moderate, and individual attribution is <b>unestablished</b> — and stays unestablished until an account-level record says otherwise.</span></li>
+      </ul>
+      <p>That last line is the point of the whole exercise. A public page linking to an operation proves the link exists; it does not prove who is behind it. Stating the limit is what keeps the finding usable.</p>
+    </div>
+  </section>
+
+  <section id="limits">
+    <p class="section-label">4 — LIMITS</p>
+    <div class="panel">
+      <ul class="bullets">
+        <li><b>No individual attribution</b><span>A distribution channel was identified. No account owner, no operator, no individual is attributed. Provider records would be required and were not sought by me.</span></li>
+        <li><b>Duration is inferred</b><span>Deployment creation timestamps are not publicly retrievable. The interval is derived from cache-age headers and is stated as an inference.</span></li>
+        <li><b>No victim-side data</b><span>Whether anything is actually stored, and how much, is unverified. Confirming it would require either the operator's surface or provider records — both outside this method's boundary.</span></li>
+        <li><b>Blast radius unmeasured</b><span>No traffic, impression or conversion data was accessed. The operation's reach is unknown.</span></li>
+        <li><b>Not exhaustive</b><span>Only the hosts discovered by following the distribution channel were examined. Other deployments from the same author may exist and were not enumerated.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="boundary">
+    <p class="section-label">5 — BOUNDARY</p>
+    <div class="panel">
+      <p>What was not done, stated explicitly because it is the part that decides whether this is research or an incident:</p>
+      <ul class="bullets">
+        <li><b>No authentication attempt</b><span>An administrative surface was identified and deliberately not touched. Its existence is documented; its contents were never accessed.</span></li>
+        <li><b>No form submission</b><span>Not even with test data. A submission would have written into a system of unknown ownership.</span></li>
+        <li><b>No exploitation, fuzzing, or credential testing.</b></li>
+        <li><b>No interaction with any operator-controlled account or channel.</b></li>
+        <li><b>No user data accessed, in any form, at any point.</b></li>
+      </ul>
+      <p>The operating rule: the method reads what the operation publishes to the world, and stops at the first door. Everything past that door belongs to a preservation request or a warrant, not to a researcher.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">6 — WHY PUBLISH THE METHOD</p>
+    <div class="panel">
+      <p>The case will expire. Deployments get deleted, pages get removed, and the specific finding becomes a historical curiosity. The procedure does not expire, and it is the part that transfers.</p>
+      <p>Applied to this case, the sequence — generator signature, artifact correlation, claim-implementation mismatch, duration inference, archive before notify — took an operation from a suspicious URL to a documented record of linkage and function using nothing but public retrieval. Anyone can repeat it on any suspected operation, on any target, and get a comparable record.</p>
+      <p>That is the deliverable: not "an Algerian phishing site exists," which is unremarkable and unverifiable, but a repeatable way to establish that an operation is one operation, since when, and what its code actually does — with the boundaries stated so the record survives being argued with.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 MARWAN NAILI — ALGIERS, DZ</span>
+    <a href="../">← RESEARCH</a>
+  </footer>
+
+</div>
+</body>
+</html>
