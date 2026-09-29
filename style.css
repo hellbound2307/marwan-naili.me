@@ -55,6 +55,17 @@ section{margin-top:60px}
 .services li{font-size:14.5px;color:var(--muted)}
 .services b{display:block;color:var(--text);font-size:15px;font-weight:600;margin-bottom:3px;letter-spacing:-0.01em}
 
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px}
+.panel p{font-size:14.5px;color:var(--body)}
+.bullets{margin-top:14px;list-style:none;display:flex;flex-direction:column;gap:9px}
+.bullets li{font-size:14.5px;color:var(--muted);padding-left:16px;position:relative}
+.bullets li:before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--border-h)}
+.bullets b{color:var(--text);font-weight:600}
+.bullets a,.panel a{color:var(--accent);text-decoration:none;border-bottom:1px solid #ddd6fe}
+.bullets a:hover,.panel a:hover{border-bottom-color:var(--accent)}
+footer a{color:var(--faint);text-decoration:none}
+footer a:hover{color:var(--text)}
+
 .email a{font-size:18px;font-weight:500;color:var(--accent);text-decoration:none}
 .email a:hover{text-decoration:underline;text-underline-offset:3px}
 .ext{margin-top:10px;font-size:14.5px}

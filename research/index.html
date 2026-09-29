@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Marwan Naili</title>
+<meta name="description" content="Security research by Marwan Naili (Algiers, Algeria): exposure measurement, malware and exfiltration analysis, and reproducible data tooling. Coordinated disclosure policy published.">
+<meta name="theme-color" content="#fafafa">
+<meta property="og:title" content="Research — Marwan Naili">
+<meta property="og:description" content="Exposure measurement, malware and exfiltration analysis, reproducible datasets. Coordinated disclosure policy published.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marwan-naili.me/research/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23161616'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fcfcfb' font-family='Helvetica,Arial' font-weight='600'%3ET%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="identity">
+      <h1>Research</h1>
+      <p class="role">Marwan Naili · Algiers, Algeria</p>
+    </div>
+    <nav class="nav">
+      <a href="../">Home</a>
+      <a href="#disclosure">Disclosure</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <p>I measure and analyse exposure, analyse malware and exfiltration channels, and build reproducible data tooling. All work is either measurement-only, or authorized, or conducted on malware in isolation. I publish the method alongside the finding — a result you cannot reproduce is an anecdote.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Focus areas</p>
+    <ul class="services">
+      <li><b>Exposure measurement</b>Internet-facing asset and service census: protocol fingerprinting, misconfiguration triage, ICS/SCADA enumeration. Measurement only.</li>
+      <li><b>Malware &amp; exfiltration analysis</b>Static and dynamic analysis of commodity RATs and stealers: C2 protocol reconstruction, payload extraction, IOC derivation.</li>
+      <li><b>Data tooling</b>Collectors, change-detection monitors and public datasets with documented provenance and reproducible builds.</li>
+      <li><b>Application security</b>Attack-surface analysis of Android and web applications: exported components, authorization boundaries, cross-app data flows.</li>
+    </ul>
+  </section>
+
+  <section id="disclosure">
+    <p class="section-label">Coordinated disclosure</p>
+    <div class="panel">
+      <p>Responsible disclosure is handled directly. I do not sell access to findings, do not trade in credentials, and do not operate infrastructure outside systems I am authorized to test.</p>
+      <ul class="bullets">
+        <li><b>Contact</b> <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></li>
+        <li><b>Scope</b> I accept reports in any infrastructure. I make findings about Algerian critical infrastructure only through CERT-CC / ARPCE channels.</li>
+        <li><b>Timing</b> Acknowledgement within 3 business days. Report publication after 90 days of vendor silence, unless a fix or mitigation exists.</li>
+        <li><b>Method</b> Non-intrusive by default. No exploitation, no authentication attempts, no denial of service, no state-affecting action.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">Published work</p>
+    <div class="work">
+
+      <article class="project">
+        <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT — Telegram exfiltration analysis</a></h3>
+        <p>Reverse engineering of a commodity Android RAT's Telegram-based exfiltration channel: payload extraction, protocol reconstruction from extracted code, and derived indicators of compromise.</p>
+        <p class="meta">Reverse engineering · Threat analysis · Public</p>
+      </article>
+
+      <article class="project">
+        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas &amp; communes dataset</a></h3>
+        <p>Structured dataset of all 69 wilayas and their communes, updated for the 2026 administrative reform, with bilingual naming and a documented generation procedure.</p>
+        <p class="meta">Dataset · Reproducible build · Public</p>
+      </article>
+
+      <article class="project">
+        <h3><a href="https://github.com/hellbound2307/solana-narrative-radar">Solana Narrative Radar</a></h3>
+        <p>Signal-fusion engine that detects emerging on-chain narratives ahead of their trend, ranking themes from transaction, repository, social and reporting signals.</p>
+        <p class="meta">Python · Cloudflare Workers · Open source</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="section-label">In progress</p>
+    <div class="work">
+      <article class="project">
+        <h3>Internet-facing critical infrastructure census</h3>
+        <p>Passive-first census of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge — using public search indexes, DNS and certificate data. Strictly measurement-only, with rules of engagement published before collection.</p>
+        <p class="meta">Ongoing · Disclosure via CERT-CC / ARPCE</p>
+      </article>
+    </div>
+    <p class="note">Findings in this section are unpublished. Nothing here is available for sale, download or redistribution.</p>
+  </section>
+
+  <section>
+    <p class="section-label">Ethics</p>
+    <ul class="services">
+      <li><b>Non-intrusive</b>Passive enumeration and protocol identification. No exploitation, no credential testing, no load.</li>
+      <li><b>Evidence</b>Every claim is reproducible: indicator, timestamp, source, and the collection method that produced it.</li>
+      <li><b>Provenance</b>Data is collected from public or authorized sources. I do not redistribute credential material or personal datasets.</li>
+      <li><b>Attribution</b>Findings are routed to the responsible party first, and to institutions with jurisdiction.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>© 2026 Marwan Naili</span>
+    <a href="../">marwan-naili.me</a>
+  </footer>
+
+</div>
+</body>
+</html>
