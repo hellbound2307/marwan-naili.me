@@ -3,153 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marwan Naili — Researcher · AI Systems, Agents &amp; Security</title>
-<meta name="description" content="Independent researcher based in Algiers, Algeria. Agentic AI systems, applied ML engineering, exposure measurement and malware analysis. Every system I run is on-device and independently verified.">
-<meta name="theme-color" content="#fafafa">
-<meta property="og:title" content="Marwan Naili — Researcher · AI Systems, Agents &amp; Security">
-<meta property="og:description" content="Agentic AI systems, applied ML engineering, exposure measurement and malware analysis. Algiers, Algeria.">
+<title>Marwan Naili — Researcher · Agentic Systems, ML, Security</title>
+<meta name="description" content="Independent researcher in Algiers, Algeria. Agentic AI platforms, applied ML and evaluation, exposure measurement and malware analysis. Every system runs on-device; every finding ships with its method.">
+<meta name="theme-color" content="#0b0c0d">
+<meta name="author" content="Marwan Naili">
+<meta property="og:title" content="Marwan Naili — Researcher">
+<meta property="og:description" content="Agentic AI systems, applied ML and evaluation, exposure measurement. Algiers, Algeria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marwan-naili.me/">
-<meta name="author" content="Marwan Naili">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23161616'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fcfcfb' font-family='Helvetica,Arial' font-weight='600'%3ET%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23c8f751' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="identity">
+    <div>
       <h1>Marwan Naili</h1>
-      <p class="role">Researcher · AI systems, agents &amp; security · Algiers, Algeria</p>
-      <p class="availability"><span class="dot"></span>Independent — not accepting client work</p>
+      <p class="role">RESEARCHER — AGENTIC SYSTEMS / APPLIED ML / SECURITY</p>
+      <p class="status"><span class="dot"></span>ALGIERS, DZ · UTC+01:00</p>
     </div>
     <nav class="nav">
-      <a href="research/">Research</a>
-      <a href="#work">Systems</a>
-      <a href="#method">Method</a>
-      <a href="#contact">Contact</a>
+      <a href="#pillars">PILLARS</a>
+      <a href="#work">SYSTEMS</a>
+      <a href="#method">METHOD</a>
+      <a href="research/">RESEARCH</a>
+      <a href="#contact">CONTACT</a>
     </nav>
   </header>
 
-  <section class="intro">
-    <p>I build and break agentic AI systems, and I measure the attack surface they inherit. My work sits in three places: <b>agent platforms</b>, <b>applied ML</b>, and <b>security measurement</b>. Everything runs on-device — a phone, a laptop, no rented compute — and every claim I publish is reproducible from the method I publish with it.</p>
-    <p class="note" style="margin-top:16px">A finding I cannot reproduce is an anecdote. <a href="research/#disclosure" style="color:var(--accent)">Disclosure policy published</a> · <a href="https://marwan-naili.me/.well-known/security.txt" style="color:var(--accent)">security.txt</a> · <span style="font-family:var(--mono)">FR / AR / EN</span></p>
+  <section>
+    <p class="intro">I build systems that run unattended, and I measure what they inherit. Three areas: <b>agent platforms</b> where a model calls tools and can break its own environment, <b>applied ML</b> where the hard part is knowing when a system is wrong, and <b>security measurement</b> — exposure, malware, and the surface area between them.</p>
+    <p class="intro">Everything runs on-device. A phone, a laptop, no rented GPUs, no cloud dependency. That constraint is not a limitation I work around; it is the reason the systems still function when the network doesn't.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="v">on-device</span><span class="k">NO CLOUD RUNTIME</span></div>
+      <div class="stat"><span class="v">non-intrusive</span><span class="k">DEFAULT METHOD</span></div>
+      <div class="stat"><span class="v">90 days</span><span class="k">DISCLOSURE WINDOW</span></div>
+      <div class="stat"><span class="v">method + result</span><span class="k">ALWAYS PUBLISHED TOGETHER</span></div>
+    </div>
   </section>
 
-  <section>
-    <p class="section-label">Research pillars</p>
+  <section id="pillars">
+    <p class="section-label">01 — PILLARS</p>
     <div class="pillars">
 
       <article class="pillar">
+        <span class="idx">[A]</span>
         <h3>Agentic systems</h3>
-        <p>Platforms where a model calls tools, runs unattended, and can break its own environment. I work on the parts that only fail under real load: sandbox containment, loop detection, tool-allowlist design, graceful degradation when a model returns nothing, and the CI needed to ship a fork for years without drift.</p>
-        <p class="meta">Android · Linux · Python · CI/CD · capability security</p>
+        <p>Platforms where a model calls tools, executes code, and runs for hours without supervision. I work on the parts that only fail under real load: sandbox containment, plugin permission models, network allowlisting enforced below the application layer, loop detection, and the CI discipline to ship a fork for years without upstream drift.</p>
+        <p class="meta">ANDROID · LINUX · PYTHON · CAPABILITY SECURITY · CI</p>
       </article>
 
       <article class="pillar">
+        <span class="idx">[B]</span>
         <h3>Applied ML &amp; evaluation</h3>
-        <p>Retrieval systems that know when they don't know, and evaluations that aren't lying to me. Supervised fine-tuning on constrained hardware, routing between small specialist models, adversarial needle-retrieval, and the unglamorous work of building a gold set so a benchmark means something.</p>
-        <p class="meta">RAG · abstention · SFT · routing · adversarial evals</p>
+        <p>Retrieval that is allowed to say <i>I don't know</i>, and evaluations that don't flatter me. Supervised fine-tuning on constrained hardware, routing across small specialist models, adversarial needle-retrieval against long context, and building a gold set by hand so a benchmark means something.</p>
+        <p class="meta">RAG · ABSTENTION · SFT · ROUTING · ADVERSARIAL EVALS</p>
       </article>
 
       <article class="pillar">
+        <span class="idx">[C]</span>
         <h3>Security measurement</h3>
-        <p>Exposure enumeration, malware and exfiltration analysis, and attack-surface review of real applications. Non-intrusive by default: passive indexes, protocol identification, static and dynamic analysis on samples I already hold. No exploitation, no credential testing, no state-affecting action.</p>
-        <p class="meta">Exposure · RE · OSINT · appsec · coordinated disclosure</p>
+        <p>Exposure enumeration, malware and exfiltration analysis, attack-surface review of real applications. Passive indexes, protocol identification, static and dynamic analysis on samples already in hand. No exploitation, no credential testing, no state-affecting action — the line is cheaper to hold before you cross it.</p>
+        <p class="meta">EXPOSURE · RE · OSINT · APPSEC · DISCLOSURE</p>
       </article>
 
     </div>
   </section>
 
   <section id="work">
-    <p class="section-label">Systems I build</p>
+    <p class="section-label">02 — SYSTEMS</p>
     <div class="work">
 
       <article class="project">
         <h3><a href="https://github.com/hellbound2307/Minis-X">Minis X</a></h3>
-        <p>A full agent platform: on-device model routing, tool execution, a Linux sandbox for untrusted code, plugin/MCP extension with a declared-permission model and a network allowlist, scheduled tasks, a persistent encrypted vault, and run telemetry. Ships through CI as a signed Android build, verified on-device after every release.</p>
-        <p class="meta">Agents · Android · capability sandbox · CI releases</p>
+        <span class="tag">agent platform</span>
+        <p>A complete agent runtime for Android: on-device model routing, tool execution, a Linux sandbox for untrusted code, plugins with declared permissions and a network allowlist, scheduled tasks, an encrypted vault, and run telemetry. Ships through CI as a signed build and is verified on-device after every release — because a green build is a claim, not a test.</p>
+        <p class="meta">AGENTS · ANDROID · SANDBOX · PLUGIN PERMISSIONS · SIGNED CI</p>
       </article>
 
       <article class="project">
-        <h3>ARGUS — evidence-grounded identity resolution</h3>
-        <p>An entity-intelligence system that runs entirely from a phone: no cloud, no rented compute. Content-addressed raw evidence in SQLite, a resolver that returns SAME / DIFFERENT / UNKNOWN with its evidence attached, per-source coverage states so "we didn't check" never looks like "nothing found", and report generation with a citation validator that fails closed.</p>
-        <p class="meta">OSINT · entity resolution · provenance · citation validation</p>
+        <h3>ARGUS</h3>
+        <span class="tag">entity intel</span>
+        <p>Entity intelligence that runs entirely from a phone. Content-addressed evidence in SQLite, a resolver that returns SAME / DIFFERENT / UNKNOWN with the evidence attached, per-source coverage states so "not checked" can never be mistaken for "nothing found", and report generation behind a citation validator that fails closed.</p>
+        <p class="meta">OSINT · RESOLUTION · PROVENANCE · CITATION VALIDATION</p>
       </article>
 
       <article class="project">
-        <h3>PANOPTES — observation layer</h3>
-        <p>A cron-snapshot geospatial feed on edge workers: earthquakes, military and civilian flights, satellites, fires, hazards and news, collected on schedule and normalised into a historical store. Deliberately inverted from per-request fan-out — the observation is the record, not a query. Includes an Algeria-scoped variant.</p>
-        <p class="meta">Edge workers · data pipelines · historical observation store</p>
+        <h3>PANOPTES</h3>
+        <span class="tag">observation</span>
+        <p>A cron-snapshot geospatial feed on edge workers — earthquakes, military and civil flights, satellites, fires, hazards, news — collected on schedule into a historical store. Deliberately inverted from per-request fan-out: the observation is the record, not a query. A national Algerian-scoped variant runs alongside it.</p>
+        <p class="meta">EDGE WORKERS · SCHEDULED COLLECTION · HISTORICAL STORE</p>
       </article>
 
       <article class="project">
         <h3>CyberRAG</h3>
-        <p>A retrieval arsenal over WSTG, ATT&amp;CK, exploitation references and my own field notes, rebuilt around a single rule: it is allowed to abstain. Concept queries and CVE lookups are separate indexes so the catalogue can't poison the corpus, and an unseen query term is treated as proof the corpus lacks the topic.</p>
-        <p class="meta">Retrieval · IDF weighting · calibration · eval harness</p>
+        <span class="tag">retrieval</span>
+        <p>A retrieval arsenal over WSTG, ATT&amp;CK, exploitation references and my own field notes, rebuilt around one rule: abstention is a valid output. Keyed lookup data and conceptual corpora live in separate indexes so a 1,900-record CVE catalogue cannot poison concept queries, and a query term absent from the corpus is treated as evidence the corpus lacks the topic.</p>
+        <p class="meta">RAG · IDF WEIGHTING · CALIBRATION · EVAL HARNESS</p>
       </article>
 
       <article class="project">
         <h3>Wormlab</h3>
-        <p>An open research question I could not find answered: what is the actual capability floor of small open-weight models used as autonomous cyber tooling? Existing claims test one hidden model size and call it a result. I am building the sweep — size versus fitness, micro-policies versus language models, payload execution versus rhetoric — with a publication plan attached.</p>
-        <p class="meta">Research · literature review · experimental design</p>
+        <span class="tag">open question</span>
+        <p>An unanswered question: what is the real capability floor of small open-weight models used as autonomous cyber tooling? Existing public claims test one deliberately undisclosed model size and call it a result. I'm building the sweep — size against task fitness, below single-GPU scale, micro-policies versus language models, payload execution versus rhetoric.</p>
+        <p class="meta">RESEARCH · LITERATURE REVIEW · EXPERIMENTAL DESIGN</p>
       </article>
 
       <article class="project">
-        <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT — exfiltration channel analysis</a></h3>
-        <p>Reverse engineering of a commodity Android RAT's Telegram-based exfiltration path: payload extraction, protocol reconstruction from recovered code, and derived indicators of compromise.</p>
-        <p class="meta">Reverse engineering · threat analysis · public</p>
+        <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT</a></h3>
+        <span class="tag">reverse eng</span>
+        <p>Reverse engineering of a commodity Android RAT's Telegram exfiltration channel: payload extraction, protocol reconstruction from recovered code, derived indicators of compromise. Samples handled in isolation; no live infrastructure contacted.</p>
+        <p class="meta">RE · THREAT ANALYSIS · IOC DERIVATION</p>
       </article>
 
       <article class="project">
-        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas &amp; communes dataset</a></h3>
-        <p>All 69 wilayas and their communes, updated for the 2026 administrative reform, with bilingual naming and a documented generation procedure so the build is reproducible rather than a one-off export.</p>
-        <p class="meta">Dataset · reproducible build · public</p>
+        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas &amp; communes</a></h3>
+        <span class="tag">dataset</span>
+        <p>All 69 wilayas and their communes, updated for the 2026 administrative reform, bilingual naming, with a documented generation procedure — a reproducible build rather than a one-off export.</p>
+        <p class="meta">DATASET · REPRODUCIBLE BUILD · PUBLIC</p>
       </article>
 
     </div>
   </section>
 
   <section id="method">
-    <p class="section-label">How I work</p>
-    <ul class="services">
-      <li><b>Verify the target</b>A flag, a test run, or a passing command proves the mechanism worked. It never proves the objective did. I check the actual state, every time.</li>
-      <li><b>Preserve what works</b>Smallest change that satisfies the requirement. Incremental beats elegant. I would rather ship a rough system that runs than a clean one that does not.</li>
-      <li><b>Say what I don't know</b>Observed, reported, inferred and unknown are kept apart. A subagent's claim is evidence to check, not evidence.</li>
-      <li><b>Publish the method</b>Method, timestamp, source and repro steps travel with the finding. Otherwise it is a claim with a screenshot attached.</li>
-    </ul>
+    <p class="section-label">03 — METHOD</p>
+    <dl class="defs">
+      <div>
+        <dt>Verify the target</dt>
+        <dd>A passing command proves the mechanism worked. It never proves the objective was met. After anything that matters, I inspect the resulting state instead of trusting the exit code.</dd>
+      </div>
+      <div>
+        <dt>Keep layers apart</dt>
+        <dd>Observed, reported, inferred, unknown. A subagent's claim is evidence to check, not evidence. A report does not become a fact because it would be convenient.</dd>
+      </div>
+      <div>
+        <dt>Smallest change</dt>
+        <dd>Incremental beats elegant. A verified rough system is worth more than a clean one that was never deployed. Rewrite only when evidence demands it, not because it would read better.</dd>
+      </div>
+      <div>
+        <dt>Method travels with result</dt>
+        <dd>Procedure, timestamp, source and reproduction steps are published alongside the finding. Without them it is a screenshot, not research.</dd>
+      </div>
+      <div>
+        <dt>Refuse early</dt>
+        <dd>No written authorization, no work. Most of what keeps a project alive is refusing one job on day one instead of managing the consequences on day ninety.</dd>
+      </div>
+    </dl>
   </section>
 
   <section>
-    <p class="section-label">Ongoing</p>
+    <p class="section-label">04 — IN PROGRESS</p>
     <div class="work">
       <article class="project">
-        <h3>Internet-facing critical infrastructure census</h3>
-        <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge — built as a reproducible measurement system rather than a one-off scan. Rules of engagement published before collection. Disclosure routed to the responsible party and to the regulator first.</p>
-        <p class="meta">Ongoing · CERT-CC / ARPCE route · non-intrusive</p>
+        <h3>Critical infrastructure exposure census</h3>
+        <span class="tag">ongoing</span>
+        <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge. The deliverable is a chain, not a port number: observation → attribution → technology → known vulnerability → how long it has been observable. Rules of engagement published before collection; disclosure to the responsible party and the regulator first.</p>
+        <p class="meta">NON-INTRUSIVE · REPRODUCIBLE METHOD · CERT-CC / ARPCE</p>
       </article>
       <article class="project">
         <h3>Small-model capability floor</h3>
-        <p>Sweeping model size against autonomous cyber-task fitness, below single-GPU scale, to establish the floor that existing claims only gesture at.</p>
-        <p class="meta">Ongoing · experimental design</p>
+        <span class="tag">ongoing</span>
+        <p>Model size swept against autonomous cyber-task fitness below single-GPU scale, establishing the quantitative floor that current public claims only gesture at.</p>
+        <p class="meta">EXPERIMENTAL DESIGN · PUBLICATION PLAN ATTACHED</p>
       </article>
     </div>
   </section>
 
   <section id="contact">
-    <p class="section-label">Contact</p>
+    <p class="section-label">05 — CONTACT</p>
     <p class="email"><a href="mailto:contact@marwan-naili.me">contact@marwan-naili.me</a></p>
-    <p class="ext">Security disclosures: <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a></p>
-    <p class="ext"><a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
-    <p class="note">Security reports are acknowledged within 3 business days. Everything else, within a week.</p>
+    <p class="ext">SECURITY — <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a></p>
+    <p class="ext">CODE — <a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
+    <p class="ext">RESEARCH RECORD — <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></p>
+    <p class="note">Security acknowledged within 3 business days. Publication after 90 days of silence, unless fixed.</p>
   </section>
 
   <footer>
-    <span>© 2026 Marwan Naili</span>
-    <a href="research/">marwan-naili.me/research/</a>
+    <span>© 2026 MARWAN NAILI — ALGIERS, DZ</span>
+    <a href="research/">RESEARCH RECORD →</a>
   </footer>
 
 </div>

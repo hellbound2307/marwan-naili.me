@@ -3,132 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research — Marwan Naili</title>
-<meta name="description" content="Research by Marwan Naili (Algiers, Algeria): agentic AI systems, applied ML and evaluation, exposure measurement and malware analysis. Coordinated disclosure policy published.">
-<meta name="theme-color" content="#fafafa">
-<meta property="og:title" content="Research — Marwan Naili">
-<meta property="og:description" content="Agentic AI systems, applied ML and evaluation, exposure measurement and malware analysis. Coordinated disclosure policy published.">
+<title>Research Record — Marwan Naili</title>
+<meta name="description" content="Detailed research record: agentic systems, applied ML and evaluation, security measurement. Disclosure policy published.">
+<meta name="theme-color" content="#0b0c0d">
+<meta property="og:title" content="Research Record — Marwan Naili">
+<meta property="og:description" content="Agentic systems, applied ML, security measurement. Method published with every result.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marwan-naili.me/research/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23161616'/%3E%3Ctext x='50' y='71' font-size='58' text-anchor='middle' fill='%23fcfcfb' font-family='Helvetica,Arial' font-weight='600'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23c8f751' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="identity">
-      <h1>Research</h1>
-      <p class="role">Marwan Naili · Algiers, Algeria</p>
+    <div>
+      <h1>Research record</h1>
+      <p class="role">METHOD PUBLISHED WITH EVERY RESULT</p>
+      <p class="status"><span class="dot"></span>ALGIERS, DZ · UTC+01:00</p>
     </div>
     <nav class="nav">
-      <a href="../">Home</a>
-      <a href="#disclosure">Disclosure</a>
+      <a href="../">HOME</a>
+      <a href="#disclosure">DISCLOSURE</a>
     </nav>
   </header>
 
-  <section class="intro">
-    <p>Three areas of work, one standard: <b>publish the method with the finding.</b> A result nobody can reproduce is a claim, not research. Everything here is either measurement-only, authorized, or conducted on samples already in hand.</p>
+  <section>
+    <p class="intro">Everything below is measurement-only, authorized, or conducted on samples already in hand. Where a finding is unpublished it is marked <b>IN PROGRESS</b> and is not available for sale, download or redistribution.</p>
   </section>
 
   <section>
-    <p class="section-label">Agentic systems</p>
+    <p class="section-label">A — AGENTIC SYSTEMS</p>
     <div class="work">
+
       <article class="project">
         <h3>Capability sandboxing for on-device agents</h3>
-        <p>Containment design for a system that lets a model execute code: bind-mount discipline, declared-permission plugins, a network allowlist enforced below the application, and escape testing against the boundary itself. Includes a self-audit that confirmed a privileged bridge crossing the guest boundary — and the fixes that closed it.</p>
-        <p class="meta">Sandboxing · permission models · network enforcement · boundary testing</p>
+        <span class="tag">in progress</span>
+        <p>Containment design for a system that lets a model execute code: bind-mount discipline, declared-permission plugins, a network allowlist enforced beneath the application rather than inside it, and escape testing aimed at the boundary itself. Includes a self-audit that confirmed a privileged bridge crossing the guest boundary, the guards that held against cross-tree ptrace and proc re-rooting, and the fixes that closed the gap.</p>
+        <p class="meta">SANDBOXING · PERMISSION MODELS · NETWORK ENFORCEMENT · BOUNDARY TESTING</p>
       </article>
+
       <article class="project">
         <h3>Degradation behaviour in long-horizon agents</h3>
-        <p>Observed failure modes when a model runs unattended across many turns: text-repetition collapse, empty responses returned as success, hard length walls, and tool loops. Each detected as a distinct class with an explicit exit rather than a retry that burns budget silently.</p>
-        <p class="meta">Failure analysis · loop detection · agent-loop instrumentation</p>
+        <span class="tag">in progress</span>
+        <p>Observed failure modes when a model runs unattended across many turns: text-repetition collapse, empty responses returned as success, hard length walls, tool loops, and truncated context silently ending a task. Each classified as a distinct failure with an explicit exit rather than a retry that burns budget and pretends nothing happened.</p>
+        <p class="meta">FAILURE ANALYSIS · LOOP DETECTION · RUN INSTRUMENTATION</p>
       </article>
+
       <article class="project">
-        <h3>Sustaining a fork against upstream drift</h3>
-        <p>Operational study of maintaining a divergent platform fork: build verification on-device rather than trusting CI, expectation-gated releases, and a debt ledger of files too large to keep editing. Written up because the failures are more instructive than the successes.</p>
-        <p class="meta">Platform engineering · release discipline · technical debt tracking</p>
+        <h3>Sustaining a platform fork</h3>
+        <span class="tag">in progress</span>
+        <p>Operational study of carrying a divergent platform fork: on-device build verification instead of trusting CI, expectation-gated releases, a debt ledger of files too large to keep editing safely, and a triage protocol for deciding what to steal from other forks. The failure modes are more instructive than the wins.</p>
+        <p class="meta">RELEASE DISCIPLINE · TECHNICAL DEBT · CI CONTRACTS</p>
       </article>
+
     </div>
   </section>
 
   <section>
-    <p class="section-label">Applied ML &amp; evaluation</p>
+    <p class="section-label">B — APPLIED ML &amp; EVALUATION</p>
     <div class="work">
+
       <article class="project">
         <h3>Abstention as a first-class retrieval output</h3>
-        <p>A retrieval system rebuilt so that "the corpus does not contain this" is a valid and common answer. Separate indexes for keyed lookup data and conceptual corpora so a large catalogue cannot poison concept queries; IDF-weighted coverage instead of term counting; a higher bar when any query term is absent from the corpus entirely. Measured on a hand-built gold set — and checked for robustness across the threshold range, because a spike at one value is overfitting, not accuracy.</p>
-        <p class="meta">RAG · IDF weighting · abstention calibration · recall/MRR evaluation</p>
+        <span class="tag">in progress</span>
+        <p>A retrieval system rebuilt so "the corpus does not contain this" is a common and correct answer. Keyed lookup data and conceptual corpora split into separate indexes so a large catalogue cannot poison concept queries; IDF-weighted coverage replaces term counting; a query term absent from the corpus raises the bar instead of lowering it. Calibrated on a hand-built gold set, then checked for robustness across the whole threshold range — a spike at one value is overfitting, not accuracy.</p>
+        <p class="meta">RAG · IDF WEIGHTING · ABSTENTION · RECALL / MRR EVALS</p>
       </article>
+
       <article class="project">
-        <h3>Small-model routing and needle-retrieval</h3>
-        <p>Measuring whether cheap specialist models can be routed instead of one general model — routing ablations against a single-model baseline — plus adversarial long-context retrieval tests to find where a fine-tuned small model stops holding facts. Training runs on constrained hardware, so cost is a real constraint, not an abstraction.</p>
-        <p class="meta">SFT · routing · adversarial evals · on-device inference</p>
+        <h3>Small-model routing and needle retrieval</h3>
+        <span class="tag">in progress</span>
+        <p>Testing whether cheap specialist models can be routed in place of one general model — routing ablations against a single-model baseline, measured honestly rather than by a single shared prompt. Alongside it, adversarial long-context retrieval to find where a fine-tuned small model stops holding facts. Training runs on constrained hardware, so cost is a real constraint and not an abstraction.</p>
+        <p class="meta">SFT · ROUTING · ADVERSARIAL EVALS · ON-DEVICE INFERENCE</p>
       </article>
+
       <article class="project">
-        <h3>Wormlab — the capability floor of small models in cyber tasks</h3>
-        <p><b>Open question.</b> Public claims that AI-driven worms are feasible with small free models test a single, deliberately undisclosed model size and stop there. Untested: the quantitative floor, the curve rather than the point, micro-policies versus language models, and payload execution versus rhetoric. I am building the sweep — size against task fitness, below single-GPU scale — with a publication plan attached, because a headline that cannot be reproduced is not a result.</p>
-        <p class="meta">Research programme · experimental design · literature review</p>
+        <h3>Wormlab — capability floor of small models</h3>
+        <span class="tag">open question</span>
+        <p><b>The gap.</b> Public claims that AI-driven worms are feasible with small free models test a single model, deliberately withhold its size, and stop. Untested: the quantitative floor, the curve rather than the point, micro-policies against language models, and payload execution against rhetoric. A headline that cannot be reproduced is not a result — so the target is the sweep, not the demonstration.</p>
+        <p class="meta">RESEARCH PROGRAMME · EXPERIMENTAL DESIGN · LITERATURE REVIEW</p>
       </article>
+
     </div>
   </section>
 
   <section>
-    <p class="section-label">Security measurement</p>
+    <p class="section-label">C — SECURITY MEASUREMENT</p>
     <div class="work">
+
+      <article class="project">
+        <h3>Critical infrastructure exposure census</h3>
+        <span class="tag">in progress</span>
+        <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge — from public search indexes, DNS and historical records, certificate transparency, archived pages and published technical documentation. No active scanning of critical infrastructure, no authentication attempts. The output is a documented chain: observation → attribution → technology → known vulnerability → duration observable. Disclosure to the responsible party and the regulator before publication.</p>
+        <p class="meta">EXPOSURE · REPRODUCIBLE METHOD · CERT-CC / ARPCE ROUTE</p>
+      </article>
+
       <article class="project">
         <h3>DarkTortilla RAT — Telegram exfiltration channel</h3>
-        <p>Static and dynamic analysis of a commodity Android RAT's exfiltration path: payload extraction, protocol reconstruction from recovered code, and derived indicators of compromise. Malicious samples were handled in isolation; no live infrastructure was contacted.</p>
-        <p class="meta">Reverse engineering · threat analysis · public</p>
+        <span class="tag">complete</span>
+        <p>Static and dynamic analysis of a commodity Android RAT's exfiltration path: payload extraction, protocol reconstruction from recovered code, indicator derivation. Malicious samples handled in isolation, with no contact with live operator infrastructure.</p>
+        <p class="meta">REVERSE ENGINEERING · THREAT ANALYSIS · PUBLIC</p>
       </article>
+
       <article class="project">
-        <h3>Evidence grading in data-breach claims</h3>
-        <p>How to tell a live leak from a re-upload. Working standard applied to a public breach claim: trace the original actor and date independently, check whether the claim matches a re-post, verify the host is a real affected organisation, and state plainly what remains technically unverified. Confidence and provenance travel with every claim.</p>
-        <p class="meta">OSINT · verification · provenance discipline</p>
+        <h3>Evidence grading for breach claims</h3>
+        <span class="tag">method</span>
+        <p>How to tell a live disclosure from a re-upload. The standard applied to a public breach claim: trace the original actor and date independently, detect whether the circulating post is a repost of an earlier claim, confirm the named organisation exists and is genuinely affected, and state plainly what remains technically unverified. Confidence and provenance are recorded separately and never merged.</p>
+        <p class="meta">OSINT · VERIFICATION · PROVENANCE · CONFIDENCE</p>
       </article>
-      <article class="project">
-        <h3>Internet-facing critical infrastructure census <span style="font-family:var(--mono);font-size:12px;color:var(--faint)">· ongoing</span></h3>
-        <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge — using public search indexes, DNS and historical records, certificate transparency, archived pages and published technical documentation. The deliverable is a chain, not a port number: <i>observation → attribution → technology → known vulnerability → how long it has been observable</i>. Non-intrusive by construction. Disclosure to the responsible party and to the regulator first.</p>
-        <p class="meta">Exposure measurement · reproducible method · CERT-CC / ARPCE route</p>
-      </article>
+
       <article class="project">
         <h3>Android attack-surface analysis</h3>
-        <p>Exported components, cross-application data flows, and authorization boundaries in mobile applications, verified with static and dynamic testing under authorized programs.</p>
-        <p class="meta">Application security · authorized engagements</p>
+        <span class="tag">authorized</span>
+        <p>Exported components, cross-application data flows and authorization boundaries in mobile applications, verified with static and dynamic testing under written authorization only.</p>
+        <p class="meta">APPSEC · AUTHORIZED ENGAGEMENTS ONLY</p>
       </article>
+
     </div>
-    <p class="note">Findings above are unpublished. Nothing here is available for sale, download or redistribution.</p>
   </section>
 
   <section id="disclosure">
-    <p class="section-label">Coordinated disclosure</p>
+    <p class="section-label">D — COORDINATED DISCLOSURE</p>
     <div class="panel">
-      <p>Handled directly by me. I do not sell access to findings, do not trade in credentials, and do not operate against infrastructure I am not authorized to test.</p>
+      <p>Handled directly. I do not sell access to findings, do not trade in credentials, and do not operate against infrastructure I am not authorized to test.</p>
       <ul class="bullets">
-        <li><b>Contact</b> <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></li>
-        <li><b>Scope</b> Reports accepted in any infrastructure. Findings about Algerian critical infrastructure are routed through CERT-CC / ARPCE rather than published first.</li>
-        <li><b>Timing</b> Acknowledgement within 3 business days. Publication after 90 days of vendor silence, unless a fix or mitigation exists.</li>
-        <li><b>Method</b> Non-intrusive by default: no exploitation, no authentication attempts, no denial of service, no state-affecting action.</li>
+        <li><b>Contact</b><span><a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></span></li>
+        <li><b>Scope</b><span>Reports accepted in any infrastructure. Findings concerning Algerian critical infrastructure are routed through CERT-CC / ARPCE rather than published first.</span></li>
+        <li><b>Timing</b><span>Acknowledgement within 3 business days. Publication after 90 days of vendor silence, unless a fix or mitigation exists.</span></li>
+        <li><b>Method</b><span>Non-intrusive by default — no exploitation, no authentication attempts, no denial of service, no state-affecting action.</span></li>
+        <li><b>Promise</b><span>No legal action against researchers acting in good faith within this policy, and no attribution without consent.</span></li>
       </ul>
     </div>
   </section>
 
   <section>
-    <p class="section-label">Principles</p>
-    <ul class="services">
-      <li><b>Verify the target</b>A passing command proves the mechanism, not the objective. The state after the action is the evidence.</li>
-      <li><b>Keep the layers apart</b>Observed, reported, inferred and unknown are distinct. A report is not promoted to a fact because it is convenient.</li>
-      <li><b>Prefer the smallest change</b>Incremental beats elegant. A verified rough system is worth more than a clean one that was never deployed.</li>
-      <li><b>Say no early</b>Scope without written authorization means no work. The line is cheaper to hold before you cross it.</li>
-    </ul>
+    <p class="section-label">E — PRINCIPLES</p>
+    <dl class="defs">
+      <div><dt>Verify the target</dt><dd>A passing command proves the mechanism ran. The state after the action is the evidence. I test the objective, not the tool that was supposed to reach it.</dd></div>
+      <div><dt>Separate the layers</dt><dd>Observed, reported, inferred, unknown. Conflicts are preserved until resolved rather than overwritten by the newer, less complete account.</dd></div>
+      <div><dt>Prefer reversibility</dt><dd>Establish current state, preserve required artifacts, know the recovery path, then act. Recoverability is not traded away for convenience without a reason.</dd></div>
+      <div><dt>Environment is capability</dt><dd>Repeated friction is a missing primitive, not a reason to keep stacking hacks. The same failure twice is a bug in the approach.</dd></div>
+    </dl>
   </section>
 
   <footer>
-    <span>© 2026 Marwan Naili</span>
-    <a href="../">marwan-naili.me</a>
+    <span>© 2026 MARWAN NAILI — ALGIERS, DZ</span>
+    <a href="../">← HOME</a>
   </footer>
 
 </div>
