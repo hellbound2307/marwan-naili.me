@@ -1,0 +1,77 @@
+# Marwan Naili — Researcher
+
+Independent researcher in Algiers, Algeria. Three areas: agentic AI platforms, applied ML & evaluation, security measurement.
+
+Everything runs on-device. No rented GPUs, no cloud runtime dependency. That constraint is the reason the systems still function when the network doesn't.
+
+## Quick Links
+
+- **Main site**: https://marwan-naili.me/
+- **Research record**: https://marwan-naili.me/research/
+- **Security contact**: https://marwan-naili.me/.well-known/security.txt
+- **GitHub (primary)**: https://github.com/hellbound2307
+- **GitHub (secondary)**: https://github.com/marwangpt237
+- **Contact**: contact@marwan-naili.me
+- **Security**: security@marwan-naili.me
+
+## Pillars
+
+### [A] Agentic Systems
+Platforms where a model calls tools, executes code, and runs for hours without supervision.
+Sandbox containment, plugin permission models, network allowlisting enforced below the application layer, loop detection, CI discipline.
+Key system: **Minis X** — complete agent runtime for Android (https://github.com/hellbound2307/Minis-X)
+
+### [B] Applied ML & Evaluation
+Retrieval that is allowed to say "I don't know", and evaluations that don't flatter.
+Supervised fine-tuning on constrained hardware, routing across small specialist models, adversarial needle-retrieval, hand-built gold sets.
+Key system: **CyberRAG** — retrieval arsenal with calibrated abstention (https://github.com/hellbound2307/CyberRAG)
+
+### [C] Security Measurement
+Exposure enumeration, malware and exfiltration analysis, attack-surface review.
+Passive indexes, protocol identification, static and dynamic analysis on samples already in hand.
+No exploitation, no credential testing, no state-affecting action.
+
+Key systems:
+- **ARGUS** — entity intelligence from a phone (SQLite, resolver with SAME/DIFFERENT/UNKNOWN, citation validator)
+- **PANOPTES** — cron-snapshot geospatial feed (earthquakes, flights, satellites, fires, hazards, news)
+- **DarkTortilla RAT** — reverse engineering of Telegram exfiltration channel
+- **Algeria wilayas & communes** — reproducible dataset (https://github.com/marwangpt237/algeria-wilayas)
+
+## Method
+
+1. **Verify the target** — A passing command proves the mechanism worked, never the objective. Inspect resulting state.
+2. **Keep layers apart** — Observed, reported, inferred, unknown. A subagent's claim is evidence to check, not evidence.
+3. **Smallest change** — Incremental beats elegant. Rewrite only when evidence demands it.
+4. **Method travels with result** — Procedure, timestamp, source, reproduction steps published alongside finding.
+5. **Refuse early** — No written authorization, no work.
+
+## In Progress
+
+- **Critical Infrastructure Exposure Census** — Passive-first measurement of Algerian critical sectors (energy, water, ports, rail, telecom). Deliverable: evidence chain observation → attribution → technology → known vulnerability → duration observable. Disclosure to responsible party + ARPCE first.
+- **Small-Model Capability Floor** — Model size swept against autonomous cyber-task fitness below single-GPU scale. Publication plan attached.
+
+## Disclosure Policy
+
+- Security issues acknowledged within 3 business days.
+- Publication after 90 days of silence, unless fixed.
+- Coordination with CERT-CC / ARPCE as appropriate.
+- Method paper published before raw evidence when live infrastructure is involved.
+- Evidence preserved (Wayback, CDX, hashes) before any publication.
+
+## Feeds
+
+- **Atom**: https://marwan-naili.me/feed.xml
+- **RSS**: https://marwan-naili.me/feed.xml (same file, dual-format)
+
+## License
+
+Method and research prose: CC BY 4.0.
+Code: per-repository licenses (mostly GPLv3 / MIT).
+Findings: per disclosure policy above.
+
+## Machine-Readable
+
+- **schema.org/Person**: embedded in index.html as JSON-LD
+- **security.txt**: https://marwan-naili.me/.well-known/security.txt (RFC 9116)
+- **robots.txt**: https://marwan-naili.me/robots.txt
+- **sitemap.xml**: https://marwan-naili.me/sitemap.xml

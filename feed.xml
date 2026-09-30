@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Marwan Naili — Research Notes</title>
+  <subtitle>Agentic systems, applied ML, security measurement. Algiers, DZ.</subtitle>
+  <link href="https://marwan-naili.me/" rel="alternate" type="text/html"/>
+  <link href="https://marwan-naili.me/feed.xml" rel="self" type="application/atom+xml"/>
+  <id>https://marwan-naili.me/</id>
+  <updated>2026-09-30T20:00:00+01:00</updated>
+  <author>
+    <name>Marwan Naili</name>
+    <email>contact@marwan-naili.me</email>
+    <uri>https://marwan-naili.me/</uri>
+  </author>
+  <generator uri="https://marwan-naili.me/">Hand-written</generator>
+  <rights>© 2026 Marwan Naili. CC BY 4.0 for method; findings per disclosure policy.</rights>
+
+  <entry>
+    <title>Critical Infrastructure Exposure Census — Rules of Engagement Published</title>
+    <link href="https://marwan-naili.me/research/#critical-infrastructure" rel="alternate"/>
+    <id>https://marwan-naili.me/research/#critical-infrastructure</id>
+    <updated>2026-09-28T14:00:00+01:00</updated>
+    <published>2026-09-28T14:00:00+01:00</published>
+    <summary type="html">
+      Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge.
+      The deliverable is a chain, not a port number: observation → attribution → technology → known vulnerability → how long it has been observable.
+      Rules of engagement published before collection; disclosure to the responsible party and the regulator first.
+    </summary>
+    <category term="security measurement"/>
+    <category term="exposure"/>
+    <category term="algeria"/>
+  </entry>
+
+  <entry>
+    <title>Small-Model Capability Floor — Experimental Design</title>
+    <link href="https://marwan-naili.me/research/#small-model-floor" rel="alternate"/>
+    <id>https://marwan-naili.me/research/#small-model-floor</id>
+    <updated>2026-09-28T14:00:00+01:00</updated>
+    <published>2026-09-28T14:00:00+01:00</published>
+    <summary type="html">
+      Model size swept against autonomous cyber-task fitness below single-GPU scale, establishing the quantitative floor
+      that current public claims only gesture at. Publication plan attached.
+    </summary>
+    <category term="research"/>
+    <category term="ml evaluation"/>
+    <category term="small models"/>
+  </entry>
+
+  <entry>
+    <title>Algerian Panoptes — Observation Layer Launched</title>
+    <link href="https://marwan-naili.me/research/#algerian-panoptes" rel="alternate"/>
+    <id>https://marwan-naili.me/research/#algerian-panoptes</id>
+    <updated>2026-09-28T02:00:00+01:00</updated>
+    <published>2026-09-28T02:00:00+01:00</published>
+    <summary type="html">
+      National Algerian-scoped geospatial observation layer running alongside global PANOPTES.
+      Cron-snapshot feed: earthquakes (EMSC), flights (adsb.lol), satellites, fires, hazards, news (GDELT).
+      Change-first design with append-only event ledger from day one.
+    </summary>
+    <category term="observation"/>
+    <category term="panoptes"/>
+    <category term="algeria"/>
+  </entry>
+
+  <entry>
+    <title>E-Mahata / Naftal Impersonation — Method Paper Published</title>
+    <link href="https://marwan-naili.me/research/impersonation-infrastructure-method/" rel="alternate"/>
+    <id>https://marwan-naili.me/research/impersonation-infrastructure-method/</id>
+    <updated>2026-09-29T18:00:00+01:00</updated>
+    <published>2026-09-29T18:00:00+01:00</published>
+    <summary type="html">
+      Two live Vercel deployments impersonating Naftal's E-Mahata brand, soliciting Edahabia card data.
+      Architectural contradiction: claims "official secure gateway" but zero application endpoints exist in 14 JS chunks.
+      Generator attribution: v0.app (Greek-letter slugs). Method paper published; coordination package drafted.
+    </summary>
+    <category term="threat analysis"/>
+    <category term="phishing"/>
+    <category term="vercel"/>
+  </entry>
+
+  <entry>
+    <title>Wateen (Saudi Blood Donation App) Leak — Verified as Re-upload</title>
+    <link href="https://marwan-naili.me/research/#wateen" rel="alternate"/>
+    <id>https://marwan-naili.me/research/#wateen</id>
+    <updated>2026-09-28T19:00:00+01:00</updated>
+    <published>2026-09-28T19:00:00+01:00</published>
+    <summary type="html">
+      28 Sep 2026 forum post by UpDap is a repost of a May 2026 breach (180,438 donor records).
+      Original actor lulzintel vs reposter updap unresolved. wateenapp.org currently globally unreachable.
+    </summary>
+    <category term="leak analysis"/>
+    <category term="saudi arabia"/>
+    <category term="updap"/>
+  </entry>
+
+</feed>
