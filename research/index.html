@@ -51,6 +51,8 @@
         <dt>Method</dt><dd>Sandboxing · Permission Models · Network Enforcement · Boundary Testing</dd>
         <dt>Finding</dt><dd>Privileged bridge (Shizuku) crosses guest boundary; proc filters block cross-tree ptrace; native-offload is the escape vector</dd>
         <dt>Reproduction</dt><dd><a href="https://github.com/hellbound2307/Minis-X/blob/main/docs/sandbox-escape-report.md">sandbox-escape-report.md</a></dd>
+        <dt>Target</dt><dd>Escape-test suite passing against Shizuku bridge + native-offload vector</dd>
+        <dt>ETA</dt><dd>2026-10-15</dd>
       </dl>
     </article>
 
@@ -67,6 +69,8 @@
         <dt>Method</dt><dd>Failure Analysis · Loop Detection · Run Instrumentation</dd>
         <dt>Finding</dt><dd>7 distinct failure classes; TextRepetitionGuard, EmptyResponseGuard, EOFStubGuard, LengthWallGuard, VerificationStopGuard, BudgetResumeGuard, SemaphoreConcurrencyGuard</dd>
         <dt>Reproduction</dt><dd>Minis X agent loop — run telemetry in /var/minis/runs/</dd>
+        <dt>Target</dt><dd>7 guard classes instrumented + telemetry dashboard</dd>
+        <dt>ETA</dt><dd>2026-10-20</dd>
       </dl>
     </article>
 
@@ -83,6 +87,8 @@
         <dt>Method</dt><dd>Release Discipline · Technical Debt · CI Contracts</dd>
         <dt>Finding</dt><dd>CI green ≠ correct; on-device verification is the only ground truth; debt ledger prevents god-file accumulation</dd>
         <dt>Reproduction</dt><dd>Minis X CI pipeline + on-device verification protocol</dd>
+        <dt>Target</dt><dd>Expectation-gated release automation + debt ledger CI check</dd>
+        <dt>ETA</dt><dd>2026-10-25</dd>
       </dl>
     </article>
 
@@ -104,6 +110,8 @@
         <dt>Method</dt><dd>RAG · IDF Weighting · Abstention · Recall / MRR Evals</dd>
         <dt>Finding</dt><dd>Two-tier index (keyed + concept) prevents catalogue poisoning; IDF coverage > term counting; threshold robustness required</dd>
         <dt>Reproduction</dt><dd>CyberRAG skill — /var/minis/skills/cyberrag/</dd>
+        <dt>Target</dt><dd>Calibrated abstention threshold stable across full gold set (no spike at single value)</dd>
+        <dt>ETA</dt><dd>2026-10-18</dd>
       </dl>
     </article>
 
@@ -120,21 +128,26 @@
         <dt>Method</dt><dd>SFT · Routing · Adversarial Evals · On-Device Inference</dd>
         <dt>Finding</dt><dd>Routing ablations needed; single-prompt evals are misleading; adversarial context finds the actual floor</dd>
         <dt>Reproduction</dt><dd>MX local-model stack — shared/mx-local-model/</dd>
+        <dt>Target</dt><dd>Routing ablation framework + adversarial needle benchmark published</dd>
+        <dt>ETA</dt><dd>2026-10-22</dd>
       </dl>
     </article>
 
     <article class="research-entry">
       <header class="research-entry-header">
-        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
-        <span class="status-badge status-badge--research">RESEARCH</span>
+        <time class="research-entry-date" datetime="2026-10-03">2026-10-03</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
         <h2 class="research-entry-title">Wormlab — capability floor of small models</h2>
       </header>
       <div class="research-entry-body">
         <p><b>The gap.</b> Public claims that AI-driven worms are feasible with small free models test a single model, deliberately withhold its size, and stop. Untested: the quantitative floor, the curve rather than the point, micro-policies against language models, and payload execution against rhetoric. A headline that cannot be reproduced is not a result — so the target is the sweep, not the demonstration.</p>
+        <p>P0 priority as of 2026-10-03: MX routing logic depends on this data.</p>
       </div>
       <dl class="research-entry-fields">
-        <dt>Method</dt><dd>Research Programme · Experimental Design · Literature Review</dd>
+        <dt>Method</dt><dd>Model sweep: sizes [1B, 3B, 7B, 14B, 32B, 70B] × task classes [recon, exploit-dev, payload-gen, post-exfil, evasion] × 50 trials each. Gold set: 200 hand-labelled cyber tasks. Compute: single A100 80GB via Colab Pro.</dd>
         <dt>Finding</dt><dd>Open question — no quantitative floor established in public literature</dd>
+        <dt>Target</dt><dd>Confusion matrix per (model_size, task_class) pair; publish sweep dataset + analysis</dd>
+        <dt>ETA</dt><dd>2026-10-25 (first results)</dd>
         <dt>Reproduction</dt><dd>Experimental design doc — shared/wormlab/</dd>
       </dl>
     </article>
@@ -155,7 +168,9 @@
       </div>
       <dl class="research-entry-fields">
         <dt>Method</dt><dd>Exposure · Reproducible Method · CERT-CC / ARPCE Route</dd>
-        <dt>Finding</dt><dd>In progress — .dz DMARC census shows gov.dz NXDOMAIN, naftal.dz/baridi.dz/eldjazair.com.dz no DMARC</dd>
+        <dt>Finding</dt><dd>Interim: gov.dz _dmarc NXDOMAIN; naftal.dz/baridi.dz/eldjazair.com.dz/mobilis.dz no DMARC; sonatrach.dz p=none; mf.gov.dz/poste.dz p=reject; djezzy.dz/ooredoo.dz p=quarantine; mdn.gov.dz SERVFAIL on TXT. Duration observable via Vercel edge age header on impersonation case demonstrates method.</dd>
+        <dt>Target</dt><dd>5-sector DMARC/SPF/DKIM census + duration observables for top 20 assets</dd>
+        <dt>ETA</dt><dd>2026-10-31</dd>
         <dt>Reproduction</dt><dd>DoH queries via cloudflare-dns.com/dns-query + dns.google/resolve</dd>
       </dl>
     </article>
