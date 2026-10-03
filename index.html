@@ -53,8 +53,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23c8f751' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%235ee6b0' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="alternate" type="application/atom+xml" title="Research Notes (Atom)" href="/feed.xml">
 <link rel="stylesheet" href="/style.css">
 </head>
@@ -101,7 +101,7 @@
 
       <article class="pillar">
         <span class="idx">[B]</span>
-        <h3>Applied ML &amp; evaluation</h3>
+        <h3>Applied ML & evaluation</h3>
         <p>Retrieval that is allowed to say <i>I don't know</i>, and evaluations that don't flatter me. Supervised fine-tuning on constrained hardware, routing across small specialist models, adversarial needle-retrieval against long context, and building a gold set by hand so a benchmark means something.</p>
         <p class="meta">RAG · ABSTENTION · SFT · ROUTING · ADVERSARIAL EVALS</p>
       </article>
@@ -120,53 +120,97 @@
     <p class="section-label">02 — SYSTEMS</p>
     <div class="work">
 
-      <article class="project">
+      <!-- LARGE CARDS (mature, shipped projects) -->
+      <article class="project project--large">
         <h3><a href="https://github.com/hellbound2307/Minis-X">Minis X</a></h3>
-        <span class="tag">agent platform</span>
+        <span class="status-badge status-badge--shipped">SHIPPED</span>
+        <p class="verified-date">verified 2026-10-01</p>
         <p>A complete agent runtime for Android: on-device model routing, tool execution, a Linux sandbox for untrusted code, plugins with declared permissions and a network allowlist, scheduled tasks, an encrypted vault, and run telemetry. Ships through CI as a signed build and is verified on-device after every release — because a green build is a claim, not a test.</p>
-        <p class="meta">AGENTS · ANDROID · SANDBOX · PLUGIN PERMISSIONS · SIGNED CI</p>
+        <div class="tag-row">
+          <span class="tag">AGENTS</span>
+          <span class="tag">ANDROID</span>
+          <span class="tag">SANDBOX</span>
+          <span class="tag">PLUGIN PERMISSIONS</span>
+          <span class="tag">SIGNED CI</span>
+        </div>
+        <div class="project-thumb">architecture diagram — add later</div>
       </article>
 
-      <article class="project">
+      <article class="project project--large">
         <h3>ARGUS</h3>
-        <span class="tag">entity intel</span>
+        <span class="status-badge status-badge--shipped">SHIPPED</span>
+        <p class="verified-date">verified 2026-09-28</p>
         <p>Entity intelligence that runs entirely from a phone. Content-addressed evidence in SQLite, a resolver that returns SAME / DIFFERENT / UNKNOWN with the evidence attached, per-source coverage states so "not checked" can never be mistaken for "nothing found", and report generation behind a citation validator that fails closed.</p>
-        <p class="meta">OSINT · RESOLUTION · PROVENANCE · CITATION VALIDATION</p>
+        <div class="tag-row">
+          <span class="tag">OSINT</span>
+          <span class="tag">RESOLUTION</span>
+          <span class="tag">PROVENANCE</span>
+          <span class="tag">CITATION VALIDATION</span>
+        </div>
+        <div class="project-thumb">entity graph — add later</div>
       </article>
 
-      <article class="project">
-        <h3>PANOPTES</h3>
-        <span class="tag">observation</span>
-        <p>A cron-snapshot geospatial feed on edge workers — earthquakes, military and civil flights, satellites, fires, hazards, news — collected on schedule into a historical store. Deliberately inverted from per-request fan-out: the observation is the record, not a query. A national Algerian-scoped variant runs alongside it.</p>
-        <p class="meta">EDGE WORKERS · SCHEDULED COLLECTION · HISTORICAL STORE</p>
-      </article>
-
-      <article class="project">
-        <h3>CyberRAG</h3>
-        <span class="tag">retrieval</span>
-        <p>A retrieval arsenal over WSTG, ATT&amp;CK, exploitation references and my own field notes, rebuilt around one rule: abstention is a valid output. Keyed lookup data and conceptual corpora live in separate indexes so a 1,900-record CVE catalogue cannot poison concept queries, and a query term absent from the corpus is treated as evidence the corpus lacks the topic.</p>
-        <p class="meta">RAG · IDF WEIGHTING · CALIBRATION · EVAL HARNESS</p>
-      </article>
-
-      <article class="project">
-        <h3>Wormlab</h3>
-        <span class="tag">open question</span>
-        <p>An unanswered question: what is the real capability floor of small open-weight models used as autonomous cyber tooling? Existing public claims test one deliberately undisclosed model size and call it a result. I'm building the sweep — size against task fitness, below single-GPU scale, micro-policies versus language models, payload execution versus rhetoric.</p>
-        <p class="meta">RESEARCH · LITERATURE REVIEW · EXPERIMENTAL DESIGN</p>
-      </article>
-
-      <article class="project">
+      <article class="project project--large">
         <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT</a></h3>
-        <span class="tag">reverse eng</span>
+        <span class="status-badge status-badge--shipped">SHIPPED</span>
+        <p class="verified-date">verified 2026-09-29</p>
         <p>Reverse engineering of a commodity Android RAT's Telegram exfiltration channel: payload extraction, protocol reconstruction from recovered code, derived indicators of compromise. Samples handled in isolation; no live infrastructure contacted.</p>
-        <p class="meta">RE · THREAT ANALYSIS · IOC DERIVATION</p>
+        <div class="tag-row">
+          <span class="tag">RE</span>
+          <span class="tag">THREAT ANALYSIS</span>
+          <span class="tag">IOC DERIVATION</span>
+        </div>
+        <div class="project-thumb">protocol reconstruction — add later</div>
       </article>
 
-      <article class="project">
-        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas &amp; communes</a></h3>
-        <span class="tag">dataset</span>
+      <!-- SMALL CARDS (active / in-progress / research) -->
+      <article class="project project--small">
+        <h3>PANOPTES</h3>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <p class="verified-date">updated 2026-09-28</p>
+        <p>A cron-snapshot geospatial feed on edge workers — earthquakes, military and civil flights, satellites, fires, hazards, news — collected on schedule into a historical store. Deliberately inverted from per-request fan-out: the observation is the record, not a query. A national Algerian-scoped variant runs alongside it.</p>
+        <div class="tag-row">
+          <span class="tag">EDGE WORKERS</span>
+          <span class="tag">SCHEDULED COLLECTION</span>
+          <span class="tag">HISTORICAL STORE</span>
+        </div>
+      </article>
+
+      <article class="project project--small">
+        <h3>CyberRAG</h3>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <p class="verified-date">updated 2026-09-29</p>
+        <p>A retrieval arsenal over WSTG, ATT&CK, exploitation references and my own field notes, rebuilt around one rule: abstention is a valid output. Keyed lookup data and conceptual corpora live in separate indexes so a 1,900-record CVE catalogue cannot poison concept queries, and a query term absent from the corpus is treated as evidence the corpus lacks the topic.</p>
+        <div class="tag-row">
+          <span class="tag">RAG</span>
+          <span class="tag">IDF WEIGHTING</span>
+          <span class="tag">CALIBRATION</span>
+          <span class="tag">EVAL HARNESS</span>
+        </div>
+      </article>
+
+      <article class="project project--small">
+        <h3>Wormlab</h3>
+        <span class="status-badge status-badge--research">RESEARCH</span>
+        <p class="verified-date">started 2026-09-28</p>
+        <p>An unanswered question: what is the real capability floor of small open-weight models used as autonomous cyber tooling? Existing public claims test one deliberately undisclosed model size and call it a result. I'm building the sweep — size against task fitness, below single-GPU scale, micro-policies versus language models, payload execution versus rhetoric.</p>
+        <div class="tag-row">
+          <span class="tag">RESEARCH</span>
+          <span class="tag">LITERATURE REVIEW</span>
+          <span class="tag">EXPERIMENTAL DESIGN</span>
+        </div>
+      </article>
+
+      <article class="project project--small">
+        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas & communes</a></h3>
+        <span class="status-badge status-badge--shipped">SHIPPED</span>
+        <p class="verified-date">verified 2026-09-28</p>
         <p>All 69 wilayas and their communes, updated for the 2026 administrative reform, bilingual naming, with a documented generation procedure — a reproducible build rather than a one-off export.</p>
-        <p class="meta">DATASET · REPRODUCIBLE BUILD · PUBLIC</p>
+        <div class="tag-row">
+          <span class="tag">DATASET</span>
+          <span class="tag">REPRODUCIBLE BUILD</span>
+          <span class="tag">PUBLIC</span>
+        </div>
       </article>
 
     </div>
@@ -201,17 +245,26 @@
   <section>
     <p class="section-label">04 — IN PROGRESS</p>
     <div class="work">
-      <article class="project">
+      <article class="project project--small">
         <h3>Critical infrastructure exposure census</h3>
-        <span class="tag">ongoing</span>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <p class="verified-date">started 2026-09-30</p>
         <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge. The deliverable is a chain, not a port number: observation → attribution → technology → known vulnerability → how long it has been observable. Rules of engagement published before collection; disclosure to the responsible party and the regulator first.</p>
-        <p class="meta">NON-INTRUSIVE · REPRODUCIBLE METHOD · CERT-CC / ARPCE</p>
+        <div class="tag-row">
+          <span class="tag">NON-INTRUSIVE</span>
+          <span class="tag">REPRODUCIBLE METHOD</span>
+          <span class="tag">CERT-CC / ARPCE</span>
+        </div>
       </article>
-      <article class="project">
+      <article class="project project--small">
         <h3>Small-model capability floor</h3>
-        <span class="tag">ongoing</span>
+        <span class="status-badge status-badge--research">RESEARCH</span>
+        <p class="verified-date">started 2026-09-28</p>
         <p>Model size swept against autonomous cyber-task fitness below single-GPU scale, establishing the quantitative floor that current public claims only gesture at.</p>
-        <p class="meta">EXPERIMENTAL DESIGN · PUBLICATION PLAN ATTACHED</p>
+        <div class="tag-row">
+          <span class="tag">EXPERIMENTAL DESIGN</span>
+          <span class="tag">PUBLICATION PLAN ATTACHED</span>
+        </div>
       </article>
     </div>
   </section>
@@ -222,7 +275,17 @@
     <p class="ext">SECURITY — <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a></p>
     <p class="ext">CODE — <a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
     <p class="ext">RESEARCH RECORD — <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></p>
-    <p class="note">Security acknowledged within 3 business days. Publication after 90 days of silence, unless fixed.</p>
+    <div class="disclosure-block">
+      <p class="section-label">DISCLOSURE TERMS</p>
+      <p>Security acknowledged within 3 business days. Publication after 90 days of silence, unless fixed.</p>
+      <ul class="bullets">
+        <li><b>Contact</b><span><a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></span></li>
+        <li><b>Scope</b><span>Reports accepted in any infrastructure. Findings concerning Algerian critical infrastructure are routed through CERT-CC / ARPCE rather than published first.</span></li>
+        <li><b>Timing</b><span>Acknowledgement within 3 business days. Publication after 90 days of vendor silence, unless a fix or mitigation exists.</span></li>
+        <li><b>Method</b><span>Non-intrusive by default — no exploitation, no authentication attempts, no denial of service, no state-affecting action.</span></li>
+        <li><b>Promise</b><span>No legal action against researchers acting in good faith within this policy, and no attribution without consent.</span></li>
+      </ul>
+    </div>
   </section>
 
   <footer>

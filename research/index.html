@@ -12,8 +12,8 @@
 <meta property="og:url" content="https://marwan-naili.me/research/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23c8f751' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%235ee6b0' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -37,105 +37,182 @@
 
   <section>
     <p class="section-label">A — AGENTIC SYSTEMS</p>
-    <div class="work">
 
-      <article class="project">
-        <h3>Capability sandboxing for on-device agents</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Capability sandboxing for on-device agents</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Containment design for a system that lets a model execute code: bind-mount discipline, declared-permission plugins, a network allowlist enforced beneath the application rather than inside it, and escape testing aimed at the boundary itself. Includes a self-audit that confirmed a privileged bridge crossing the guest boundary, the guards that held against cross-tree ptrace and proc re-rooting, and the fixes that closed the gap.</p>
-        <p class="meta">SANDBOXING · PERMISSION MODELS · NETWORK ENFORCEMENT · BOUNDARY TESTING</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Sandboxing · Permission Models · Network Enforcement · Boundary Testing</dd>
+        <dt>Finding</dt><dd>Privileged bridge (Shizuku) crosses guest boundary; proc filters block cross-tree ptrace; native-offload is the escape vector</dd>
+        <dt>Reproduction</dt><dd><a href="https://github.com/hellbound2307/Minis-X/blob/main/docs/sandbox-escape-report.md">sandbox-escape-report.md</a></dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Degradation behaviour in long-horizon agents</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Degradation behaviour in long-horizon agents</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Observed failure modes when a model runs unattended across many turns: text-repetition collapse, empty responses returned as success, hard length walls, tool loops, and truncated context silently ending a task. Each classified as a distinct failure with an explicit exit rather than a retry that burns budget and pretends nothing happened.</p>
-        <p class="meta">FAILURE ANALYSIS · LOOP DETECTION · RUN INSTRUMENTATION</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Failure Analysis · Loop Detection · Run Instrumentation</dd>
+        <dt>Finding</dt><dd>7 distinct failure classes; TextRepetitionGuard, EmptyResponseGuard, EOFStubGuard, LengthWallGuard, VerificationStopGuard, BudgetResumeGuard, SemaphoreConcurrencyGuard</dd>
+        <dt>Reproduction</dt><dd>Minis X agent loop — run telemetry in /var/minis/runs/</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Sustaining a platform fork</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Sustaining a platform fork</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Operational study of carrying a divergent platform fork: on-device build verification instead of trusting CI, expectation-gated releases, a debt ledger of files too large to keep editing safely, and a triage protocol for deciding what to steal from other forks. The failure modes are more instructive than the wins.</p>
-        <p class="meta">RELEASE DISCIPLINE · TECHNICAL DEBT · CI CONTRACTS</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Release Discipline · Technical Debt · CI Contracts</dd>
+        <dt>Finding</dt><dd>CI green ≠ correct; on-device verification is the only ground truth; debt ledger prevents god-file accumulation</dd>
+        <dt>Reproduction</dt><dd>Minis X CI pipeline + on-device verification protocol</dd>
+      </dl>
+    </article>
 
-    </div>
   </section>
 
   <section>
-    <p class="section-label">B — APPLIED ML &amp; EVALUATION</p>
-    <div class="work">
+    <p class="section-label">B — APPLIED ML & EVALUATION</p>
 
-      <article class="project">
-        <h3>Abstention as a first-class retrieval output</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-29">2026-09-29</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Abstention as a first-class retrieval output</h2>
+      </header>
+      <div class="research-entry-body">
         <p>A retrieval system rebuilt so "the corpus does not contain this" is a common and correct answer. Keyed lookup data and conceptual corpora split into separate indexes so a large catalogue cannot poison concept queries; IDF-weighted coverage replaces term counting; a query term absent from the corpus raises the bar instead of lowering it. Calibrated on a hand-built gold set, then checked for robustness across the whole threshold range — a spike at one value is overfitting, not accuracy.</p>
-        <p class="meta">RAG · IDF WEIGHTING · ABSTENTION · RECALL / MRR EVALS</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>RAG · IDF Weighting · Abstention · Recall / MRR Evals</dd>
+        <dt>Finding</dt><dd>Two-tier index (keyed + concept) prevents catalogue poisoning; IDF coverage > term counting; threshold robustness required</dd>
+        <dt>Reproduction</dt><dd>CyberRAG skill — /var/minis/skills/cyberrag/</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Small-model routing and needle retrieval</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Small-model routing and needle retrieval</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Testing whether cheap specialist models can be routed in place of one general model — routing ablations against a single-model baseline, measured honestly rather than by a single shared prompt. Alongside it, adversarial long-context retrieval to find where a fine-tuned small model stops holding facts. Training runs on constrained hardware, so cost is a real constraint and not an abstraction.</p>
-        <p class="meta">SFT · ROUTING · ADVERSARIAL EVALS · ON-DEVICE INFERENCE</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>SFT · Routing · Adversarial Evals · On-Device Inference</dd>
+        <dt>Finding</dt><dd>Routing ablations needed; single-prompt evals are misleading; adversarial context finds the actual floor</dd>
+        <dt>Reproduction</dt><dd>MX local-model stack — shared/mx-local-model/</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Wormlab — capability floor of small models</h3>
-        <span class="tag">open question</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--research">RESEARCH</span>
+        <h2 class="research-entry-title">Wormlab — capability floor of small models</h2>
+      </header>
+      <div class="research-entry-body">
         <p><b>The gap.</b> Public claims that AI-driven worms are feasible with small free models test a single model, deliberately withhold its size, and stop. Untested: the quantitative floor, the curve rather than the point, micro-policies against language models, and payload execution against rhetoric. A headline that cannot be reproduced is not a result — so the target is the sweep, not the demonstration.</p>
-        <p class="meta">RESEARCH PROGRAMME · EXPERIMENTAL DESIGN · LITERATURE REVIEW</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Research Programme · Experimental Design · Literature Review</dd>
+        <dt>Finding</dt><dd>Open question — no quantitative floor established in public literature</dd>
+        <dt>Reproduction</dt><dd>Experimental design doc — shared/wormlab/</dd>
+      </dl>
+    </article>
 
-    </div>
   </section>
 
   <section>
     <p class="section-label">C — SECURITY MEASUREMENT</p>
-    <div class="work">
 
-      <article class="project">
-        <h3>Critical infrastructure exposure census</h3>
-        <span class="tag">in progress</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-30">2026-09-30</time>
+        <span class="status-badge status-badge--active">ACTIVE</span>
+        <h2 class="research-entry-title">Critical infrastructure exposure census</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Passive-first measurement of Algerian critical-sector exposure — energy, water, ports, rail, telecom edge — from public search indexes, DNS and historical records, certificate transparency, archived pages and published technical documentation. No active scanning of critical infrastructure, no authentication attempts. The output is a documented chain: observation → attribution → technology → known vulnerability → duration observable. Disclosure to the responsible party and the regulator before publication.</p>
-        <p class="meta">EXPOSURE · REPRODUCIBLE METHOD · CERT-CC / ARPCE ROUTE</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Exposure · Reproducible Method · CERT-CC / ARPCE Route</dd>
+        <dt>Finding</dt><dd>In progress — .dz DMARC census shows gov.dz NXDOMAIN, naftal.dz/baridi.dz/eldjazair.com.dz no DMARC</dd>
+        <dt>Reproduction</dt><dd>DoH queries via cloudflare-dns.com/dns-query + dns.google/resolve</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>DarkTortilla RAT — Telegram exfiltration channel</h3>
-        <span class="tag">complete</span>
-        <p>Static and dynamic analysis of a commodity Android RAT's exfiltration path: payload extraction, protocol reconstruction from recovered code, indicator derivation. Malicious samples handled in isolation, with no contact with live operator infrastructure.</p>
-        <p class="meta">REVERSE ENGINEERING · THREAT ANALYSIS · PUBLIC</p>
-      </article>
-
-      <article class="project">
-        <h3><a href="./impersonation-infrastructure-method/">Duration and linkage on a live impersonation operation</a></h3>
-        <span class="tag">method</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-29">2026-09-29</time>
+        <span class="status-badge status-badge--shipped">COMPLETE</span>
+        <h2 class="research-entry-title"><a href="./impersonation-infrastructure-method/">Duration and linkage on a live impersonation operation</a></h2>
+      </header>
+      <div class="research-entry-body">
         <p>A passive procedure for taking a suspected brand-impersonation operation from "this looks like phishing" to a documented record of <b>what is linked, since when, and what its code actually does</b> — without touching the operation, its users, or its data. Generator attribution, artifact correlation, the claim-implementation mismatch test, and duration inference, demonstrated on a live Algerian case. Boundaries stated, limits included, individual attribution left unestablished.</p>
-        <p class="meta">PASSIVE OSINT · BUNDLE ANALYSIS · DEPLOYMENT CORRELATION · EVIDENCE SEQUENCING</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>Passive OSINT · Bundle Analysis · Deployment Correlation · Evidence Sequencing</dd>
+        <dt>Finding</dt><dd>v0-generated (generator meta); claim-implementation mismatch (no payment gateway exists); duration via Vercel edge age header</dd>
+        <dt>Reproduction</dt><dd><a href="https://marwan-naili.me/research/impersonation-infrastructure-method/">Method paper</a> · Evidence manifest in workspace/mahata/</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Evidence grading for breach claims</h3>
-        <span class="tag">method</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--shipped">COMPLETE</span>
+        <h2 class="research-entry-title">Evidence grading for breach claims</h2>
+      </header>
+      <div class="research-entry-body">
         <p>How to tell a live disclosure from a re-upload. The standard applied to a public breach claim: trace the original actor and date independently, detect whether the circulating post is a repost of an earlier claim, confirm the named organisation exists and is genuinely affected, and state plainly what remains technically unverified. Confidence and provenance are recorded separately and never merged.</p>
-        <p class="meta">OSINT · VERIFICATION · PROVENANCE · CONFIDENCE</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>OSINT · Verification · Provenance · Confidence</dd>
+        <dt>Finding</dt><dd>Wateen leak claim (Sep 2026) = re-upload of May 2026 claim; original actor lulzintel vs reposter updap unresolved</dd>
+        <dt>Reproduction</dt><dd>Evidence file — workspace/wateen-case/evidence.md</dd>
+      </dl>
+    </article>
 
-      <article class="project">
-        <h3>Android attack-surface analysis</h3>
-        <span class="tag">authorized</span>
+    <article class="research-entry">
+      <header class="research-entry-header">
+        <time class="research-entry-date" datetime="2026-09-28">2026-09-28</time>
+        <span class="status-badge status-badge--authorized">AUTHORIZED</span>
+        <h2 class="research-entry-title">Android attack-surface analysis</h2>
+      </header>
+      <div class="research-entry-body">
         <p>Exported components, cross-application data flows and authorization boundaries in mobile applications, verified with static and dynamic testing under written authorization only.</p>
-        <p class="meta">APPSEC · AUTHORIZED ENGAGEMENTS ONLY</p>
-      </article>
+      </div>
+      <dl class="research-entry-fields">
+        <dt>Method</dt><dd>AppSec · Authorized Engagements Only</dd>
+        <dt>Finding</dt><dd>Per-engagement — not published</dd>
+        <dt>Reproduction</dt><dd>android-ui-automation skill + Shizuku CLI</dd>
+      </dl>
+    </article>
 
-    </div>
   </section>
 
   <section id="disclosure">
     <p class="section-label">D — COORDINATED DISCLOSURE</p>
-    <div class="panel">
+    <div class="disclosure-block">
       <p>Handled directly. I do not sell access to findings, do not trade in credentials, and do not operate against infrastructure I am not authorized to test.</p>
       <ul class="bullets">
         <li><b>Contact</b><span><a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></span></li>
