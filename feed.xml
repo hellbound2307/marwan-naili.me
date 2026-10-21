@@ -5,7 +5,7 @@
   <link href="https://marwan-naili.me/" rel="alternate" type="text/html"/>
   <link href="https://marwan-naili.me/feed.xml" rel="self" type="application/atom+xml"/>
   <id>https://marwan-naili.me/</id>
-  <updated>2026-09-30T20:00:00+01:00</updated>
+  <updated>2026-10-21T12:00:00+01:00</updated>
   <author>
     <name>Marwan Naili</name>
     <email>contact@marwan-naili.me</email>
@@ -13,6 +13,26 @@
   </author>
   <generator uri="https://marwan-naili.me/">Hand-written</generator>
   <rights>© 2026 Marwan Naili. CC BY 4.0 for method; findings per disclosure policy.</rights>
+
+  <entry>
+    <title>Measurement Record Published — Values, Sample Sizes, Instruments, Limits</title>
+    <link href="https://marwan-naili.me/evidence/" rel="alternate"/>
+    <id>https://marwan-naili.me/evidence/</id>
+    <updated>2026-10-21T12:00:00+01:00</updated>
+    <published>2026-10-21T12:00:00+01:00</published>
+    <summary type="html">
+      Fifteen measured results with the sample size, the instrument, and what each number does not prove.
+      Device-class runtime (284 ms start to control, 48 s deterministic reap over 48 samples, 0 transport
+      interruptions after switching to a parked long-poll), transport resilience over Tor (40 s cold
+      bootstrap, 10.9 s fresh circuit — which rules out per-beacon circuits), and the cloud compute layer
+      (2.6 s cold start, 38.7 s cargo check with 4 GB swap, OOM-kill without it).
+      Limits published alongside results, including what is deliberately not released.
+    </summary>
+    <category term="measurement"/>
+    <category term="method"/>
+    <category term="agentic systems"/>
+    <category term="offensive instrumentation"/>
+  </entry>
 
   <entry>
     <title>Critical Infrastructure Exposure Census — Rules of Engagement Published</title>

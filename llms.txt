@@ -1,12 +1,15 @@
 # Marwan Naili — Researcher
 
-Independent researcher in Algiers, Algeria. Three areas: agentic AI platforms, applied ML & evaluation, security measurement.
+Independent researcher in Algiers, Algeria. Three areas: agentic AI platforms, applied ML & evaluation, offensive instrumentation built to be measured.
 
 Everything runs on-device. No rented GPUs, no cloud runtime dependency. That constraint is the reason the systems still function when the network doesn't.
+
+Core position: **a capability without a measurement is a demo; a measurement without a method is a screenshot.**
 
 ## Quick Links
 
 - **Main site**: https://marwan-naili.me/
+- **Measurement record**: https://marwan-naili.me/evidence/
 - **Research record**: https://marwan-naili.me/research/
 - **Security contact**: https://marwan-naili.me/.well-known/security.txt
 - **GitHub (primary)**: https://github.com/hellbound2307
@@ -19,23 +22,34 @@ Everything runs on-device. No rented GPUs, no cloud runtime dependency. That con
 ### [A] Agentic Systems
 Platforms where a model calls tools, executes code, and runs for hours without supervision.
 Sandbox containment, plugin permission models, network allowlisting enforced below the application layer, loop detection, CI discipline.
-Key system: **Minis X** — complete agent runtime for Android (https://github.com/hellbound2307/Minis-X)
+Key system: **Minis X** — complete agent runtime for Android, 24 builds / 19 releases / 93 commits, each verified on hardware (https://github.com/hellbound2307/Minis-X)
+Distinctive artifact: an append-only run recorder with redacted argument digests and subagent lineage, readable by the agent itself.
 
 ### [B] Applied ML & Evaluation
 Retrieval that is allowed to say "I don't know", and evaluations that don't flatter.
 Supervised fine-tuning on constrained hardware, routing across small specialist models, adversarial needle-retrieval, hand-built gold sets.
-Key system: **CyberRAG** — retrieval arsenal with calibrated abstention (https://github.com/hellbound2307/CyberRAG)
+Key system: **CyberRAG** — retrieval arsenal with calibrated abstention
 
-### [C] Security Measurement
-Exposure enumeration, malware and exfiltration analysis, attack-surface review.
-Passive indexes, protocol identification, static and dynamic analysis on samples already in hand.
-No exploitation, no credential testing, no state-affecting action.
-
+### [C] Offensive Instrumentation
+Attack capability constructed so a defensive claim can be tested against it. The artifact and the numbers ship together.
+Self-directed against own hardware, or against samples already in hand. No third-party infrastructure without written scope.
 Key systems:
-- **ARGUS** — entity intelligence from a phone (SQLite, resolver with SAME/DIFFERENT/UNKNOWN, citation validator)
-- **PANOPTES** — cron-snapshot geospatial feed (earthquakes, flights, satellites, fires, hazards, news)
-- **DarkTortilla RAT** — reverse engineering of Telegram exfiltration channel
-- **Algeria wilayas & communes** — reproducible dataset (https://github.com/marwangpt237/algeria-wilayas)
+- **SHADOW** — Android post-exploitation instrumentation: Rust core, JNI bridge, four persistence paths, Durable Object control plane (https://github.com/hellbound2307/shadow)
+- **ARGUS** — entity intelligence from a phone (SQLite, SAME/DIFFERENT/UNKNOWN resolver, citation validator)
+- **DarkTortilla RAT** — reverse engineering of a Telegram exfiltration channel; IOC derivation, no live infrastructure contacted
+- **Propagation lab** — containerised synthetic network measuring infection curves and OOD propagation detection
+- **PANOPTES** — cron-snapshot geospatial feed, 133,480 records collected
+
+## Measurement highlights
+
+Full record with sample sizes and stated limits: https://marwan-naili.me/evidence/
+
+- 284 ms — process start to established control channel (OPPO A16s, Android 11)
+- 48 s — deterministic background reap interval, derived from 48 samples
+- 0 — control interruptions across two reap cycles after switching to a parked long-poll beacon
+- 10.9 s — fresh Tor circuit; 40 s cold bootstrap. Rules out per-beacon circuits.
+- 2.6 s — cloud sandbox creation to first executed command
+- 38.7 s — `cargo check` with a dependency tree (reqwest/hyper/rustls) after provisioning 4 GB swap; OOM-kill without it
 
 ## Method
 
@@ -43,12 +57,18 @@ Key systems:
 2. **Keep layers apart** — Observed, reported, inferred, unknown. A subagent's claim is evidence to check, not evidence.
 3. **Smallest change** — Incremental beats elegant. Rewrite only when evidence demands it.
 4. **Method travels with result** — Procedure, timestamp, source, reproduction steps published alongside finding.
-5. **Refuse early** — No written authorization, no work.
+5. **Publish the numbers** — A capability claim with no measurement is marketing. Where a result cannot be published, the method and the limits are published instead, and the omission is stated.
+6. **Refuse early** — No written authorization, no work.
 
 ## In Progress
 
 - **Critical Infrastructure Exposure Census** — Passive-first measurement of Algerian critical sectors (energy, water, ports, rail, telecom). Deliverable: evidence chain observation → attribution → technology → known vulnerability → duration observable. Disclosure to responsible party + ARPCE first.
 - **Small-Model Capability Floor** — Model size swept against autonomous cyber-task fitness below single-GPU scale. Publication plan attached.
+
+## Published research
+
+- **E-Mahata / Naftal impersonation** — method paper: https://marwan-naili.me/research/impersonation-infrastructure-method/
+- **Wateen (Saudi) leak** — verified as a re-upload of a May 2026 breach; actor attribution left unresolved rather than asserted
 
 ## Disclosure Policy
 
@@ -61,7 +81,6 @@ Key systems:
 ## Feeds
 
 - **Atom**: https://marwan-naili.me/feed.xml
-- **RSS**: https://marwan-naili.me/feed.xml (same file, dual-format)
 
 ## License
 

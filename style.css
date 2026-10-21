@@ -330,3 +330,45 @@ footer a:hover { color: var(--accent) }
   footer { flex-direction: column; gap: 6px }
   .section-label { font-size: 0.85rem; }
 }
+/* ── measurement table (evidence page) ────────────────── */
+.mtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  font-size: 13.5px;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+}
+.mtable thead th {
+  font: 10.5px/1.4 var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: left;
+  padding: 0 14px 8px 0;
+  border-bottom: 1px solid var(--border-hi);
+  white-space: nowrap;
+}
+.mtable td {
+  padding: 11px 14px 11px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.mtable tbody tr:hover td { background: rgba(255,255,255,.015) }
+.mtable td:first-child { color: var(--text-primary); min-width: 190px }
+.mtable td.num {
+  font: 12.5px/1.5 var(--font-mono);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.mtable a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim) }
+.mtable a:hover { border-bottom-color: var(--accent) }
+.mtable code { white-space: nowrap }
+
+@media (max-width: 640px) {
+  .mtable { font-size: 12.5px }
+  .mtable td:first-child { min-width: 150px }
+}

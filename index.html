@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marwan Naili — Researcher · Agentic Systems, ML, Security</title>
-<meta name="description" content="Independent researcher in Algiers, Algeria. Agentic AI platforms, applied ML and evaluation, exposure measurement and malware analysis. Every system runs on-device; every finding ships with its method.">
+<title>Marwan Naili — Researcher · Agentic Systems, Offensive Instrumentation, Measurement</title>
+<meta name="description" content="Independent researcher in Algiers, Algeria. Agentic AI platforms, small-model evaluation, and offensive instrumentation built to be measured rather than demonstrated. Every capability ships with its numbers and its method.">
 <meta name="theme-color" content="#0b0c0d">
 <meta name="author" content="Marwan Naili">
 <meta property="og:title" content="Marwan Naili — Researcher">
-<meta property="og:description" content="Agentic AI systems, applied ML and evaluation, exposure measurement. Algiers, Algeria.">
+<meta property="og:description" content="Agentic AI systems, small-model evaluation, offensive instrumentation. Capability ships with its measurement. Algiers, Algeria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://marwan-naili.me/">
 <meta property="og:image" content="https://marwan-naili.me/og-image.svg">
@@ -16,7 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Marwan Naili — Researcher">
-<meta name="twitter:description" content="Agentic AI systems, applied ML and evaluation, exposure measurement. Algiers, Algeria.">
+<meta name="twitter:description" content="Agentic AI systems, small-model evaluation, offensive instrumentation. Capability ships with its measurement. Algiers, Algeria.">
 <meta name="twitter:image" content="https://marwan-naili.me/og-image.svg">
 <script type="application/ld+json">
 {
@@ -30,25 +30,19 @@
     "https://github.com/marwangpt237"
   ],
   "jobTitle": "Independent Researcher",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Self-employed"
-  },
-  "location": {
-    "@type": "Place",
-    "name": "Algiers, Algeria"
-  },
+  "worksFor": { "@type": "Organization", "name": "Self-employed" },
+  "location": { "@type": "Place", "name": "Algiers, Algeria" },
   "knowsAbout": [
     "Agentic AI Systems",
     "Applied Machine Learning",
-    "Security Measurement",
-    "OSINT",
+    "Model Evaluation",
+    "Offensive Security Research",
+    "Android Internals",
     "Reverse Engineering",
-    "Android Security",
-    "RAG Systems",
-    "Model Evaluation"
+    "OSINT",
+    "Command and Control Resilience"
   ],
-  "description": "Independent researcher in Algiers, Algeria. Agentic AI platforms, applied ML and evaluation, exposure measurement and malware analysis. Every system runs on-device; every finding ships with its method."
+  "description": "Independent researcher in Algiers, Algeria. Agentic AI platforms, small-model evaluation, and offensive instrumentation built to be measured rather than demonstrated."
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,12 +58,13 @@
   <header>
     <div>
       <h1>Marwan Naili</h1>
-      <p class="role">RESEARCHER — AGENTIC SYSTEMS / APPLIED ML / SECURITY</p>
+      <p class="role">RESEARCHER — AGENTIC SYSTEMS / OFFENSIVE INSTRUMENTATION / MEASUREMENT</p>
       <p class="status"><span class="dot"></span>ALGIERS, DZ · UTC+01:00</p>
     </div>
     <nav class="nav">
       <a href="#pillars">PILLARS</a>
       <a href="#work">SYSTEMS</a>
+      <a href="evidence/">EVIDENCE</a>
       <a href="#method">METHOD</a>
       <a href="research/">RESEARCH</a>
       <a href="#contact">CONTACT</a>
@@ -77,14 +72,15 @@
   </header>
 
   <section>
-    <p class="intro">I build systems that run unattended, and I measure what they inherit. Three areas: <b>agent platforms</b> where a model calls tools and can break its own environment, <b>applied ML</b> where the hard part is knowing when a system is wrong, and <b>security measurement</b> — exposure, malware, and the surface area between them.</p>
+    <p class="intro">I build systems that run unattended, then measure what they inherit. Three areas: <b>agent platforms</b> where a model calls tools and can break its own environment, <b>applied ML</b> where the hard part is knowing when a system is wrong, and <b>offensive instrumentation</b> — attack capability constructed so that a defensive claim can actually be tested against it.</p>
     <p class="intro">Everything runs on-device. A phone, a laptop, no rented GPUs, no cloud dependency. That constraint is not a limitation I work around; it is the reason the systems still function when the network doesn't.</p>
+    <p class="intro">The method is the product. A capability without a measurement is a demo; a measurement without a method is a screenshot. Everything below ships as a pair.</p>
 
     <div class="stats">
-      <div class="stat"><span class="v">on-device</span><span class="k">NO CLOUD RUNTIME</span></div>
-      <div class="stat"><span class="v">non-intrusive</span><span class="k">DEFAULT METHOD</span></div>
-      <div class="stat"><span class="v">90 days</span><span class="k">DISCLOSURE WINDOW</span></div>
-      <div class="stat"><span class="v">method + result</span><span class="k">ALWAYS PUBLISHED TOGETHER</span></div>
+      <div class="stat"><a class="v" href="/evidence/">284 ms</a><span class="k">DEVICE START → CONTROL</span></div>
+      <div class="stat"><a class="v" href="/evidence/">48 s</a><span class="k">MEASURED REAP INTERVAL · 48 SAMPLES</span></div>
+      <div class="stat"><a class="v" href="/evidence/">24 builds</a><span class="k">EACH VERIFIED ON HARDWARE</span></div>
+      <div class="stat"><a class="v" href="/evidence/">133,480</a><span class="k">RECORDS · ONE PUBLIC DATASET</span></div>
     </div>
   </section>
 
@@ -95,7 +91,7 @@
       <article class="pillar">
         <span class="idx">[A]</span>
         <h3>Agentic systems</h3>
-        <p>Platforms where a model calls tools, executes code, and runs for hours without supervision. I work on the parts that only fail under real load: sandbox containment, plugin permission models, network allowlisting enforced below the application layer, loop detection, and the CI discipline to ship a fork for years without upstream drift.</p>
+        <p>Platforms where a model calls tools, executes code, and runs for hours without supervision. I work on the parts that only fail under real load: sandbox containment, plugin permission models, network allowlisting enforced below the application layer, loop detection, and the CI discipline to carry a fork for years without upstream drift.</p>
         <p class="meta">ANDROID · LINUX · PYTHON · CAPABILITY SECURITY · CI</p>
       </article>
 
@@ -108,9 +104,9 @@
 
       <article class="pillar">
         <span class="idx">[C]</span>
-        <h3>Security measurement</h3>
-        <p>Exposure enumeration, malware and exfiltration analysis, attack-surface review of real applications. Passive indexes, protocol identification, static and dynamic analysis on samples already in hand. No exploitation, no credential testing, no state-affecting action — the line is cheaper to hold before you cross it.</p>
-        <p class="meta">EXPOSURE · RE · OSINT · APPSEC · DISCLOSURE</p>
+        <h3>Offensive instrumentation</h3>
+        <p>Attack capability built to be measured rather than demonstrated. I construct the artifact — Android post-exploitation, resilient transport, sandbox escape — and then quantify whether the defense that is supposed to stop it actually does. Both halves ship together: the tool and the numbers. Work is self-directed against my own hardware, or against samples already in hand; nothing third-party is touched without written scope.</p>
+        <p class="meta">REVERSE ENGINEERING · C2 RESILIENCE · EXFILTRATION ANALYSIS · DISCLOSURE</p>
       </article>
 
     </div>
@@ -124,50 +120,61 @@
       <article class="project project--large">
         <h3><a href="https://github.com/hellbound2307/Minis-X">Minis X</a></h3>
         <span class="status-badge status-badge--shipped">SHIPPED</span>
-        <p class="verified-date">verified 2026-10-01</p>
-        <p>A complete agent runtime for Android: on-device model routing, tool execution, a Linux sandbox for untrusted code, plugins with declared permissions and a network allowlist, scheduled tasks, an encrypted vault, and run telemetry. Ships through CI as a signed build and is verified on-device after every release — because a green build is a claim, not a test.</p>
+        <p class="verified-date">24 builds · 19 releases · 93 commits · verified on-device 2026-10-01</p>
+        <p>A complete agent runtime for Android: on-device model routing, tool execution, a Linux sandbox for untrusted code, plugins with declared permissions and a network allowlist enforced at the syscall layer, scheduled tasks, an encrypted vault, and run telemetry the agent can read back about itself. Why the last one matters: every safety framework asks for an agent that records exactly what it did — with arguments redacted and subagent lineage preserved — and almost nobody ships one.</p>
         <div class="tag-row">
           <span class="tag">AGENTS</span>
           <span class="tag">ANDROID</span>
           <span class="tag">SANDBOX</span>
           <span class="tag">PLUGIN PERMISSIONS</span>
           <span class="tag">SIGNED CI</span>
+          <span class="tag">RUN TELEMETRY</span>
         </div>
-        <div class="project-thumb">architecture diagram — add later</div>
+      </article>
+
+      <article class="project project--large">
+        <h3><a href="https://github.com/hellbound2307/shadow">SHADOW</a></h3>
+        <span class="status-badge status-badge--shipped">SHIPPED</span>
+        <p class="verified-date">93 commits · measured on hardware 2026-10-18</p>
+        <p>Android post-exploitation <i>instrumentation</i>: a Rust core behind a thin Kotlin JNI bridge, four independent persistence paths, and a Durable Object control plane. Built as an instrument, not a demo — each capability exists so that a defense claim can be tested against it, and each one is timed. Three silent failure classes were diagnosed at DEX level that all surface to the operator as the identical JVM error string: classloader scope on attached threads, a catch-all descriptor fallback, and Kotlin <code>object</code> members compiling to instance methods. The fixes were environmental, not model capability — which is the finding.</p>
+        <div class="tag-row">
+          <span class="tag">ANDROID INTERNALS</span>
+          <span class="tag">JNI / DEX</span>
+          <span class="tag">C2 RESILIENCE</span>
+          <span class="tag">PERSISTENCE</span>
+        </div>
       </article>
 
       <article class="project project--large">
         <h3>ARGUS</h3>
         <span class="status-badge status-badge--shipped">SHIPPED</span>
         <p class="verified-date">verified 2026-09-28</p>
-        <p>Entity intelligence that runs entirely from a phone. Content-addressed evidence in SQLite, a resolver that returns SAME / DIFFERENT / UNKNOWN with the evidence attached, per-source coverage states so "not checked" can never be mistaken for "nothing found", and report generation behind a citation validator that fails closed.</p>
+        <p>Entity intelligence that runs entirely from a phone. Content-addressed evidence in SQLite, a resolver that returns SAME / DIFFERENT / UNKNOWN with the evidence attached, per-source coverage states so "not checked" can never be mistaken for "nothing found", and report generation behind a citation validator that fails closed. Provenance is a data structure here, not a paragraph at the end.</p>
         <div class="tag-row">
           <span class="tag">OSINT</span>
           <span class="tag">RESOLUTION</span>
           <span class="tag">PROVENANCE</span>
           <span class="tag">CITATION VALIDATION</span>
         </div>
-        <div class="project-thumb">entity graph — add later</div>
       </article>
 
       <article class="project project--large">
         <h3><a href="https://github.com/hellbound2307/DarkTortilla-RAT-Telegram-Exfiltration-Payload-Extraction-Analysis">DarkTortilla RAT</a></h3>
         <span class="status-badge status-badge--shipped">SHIPPED</span>
         <p class="verified-date">verified 2026-09-29</p>
-        <p>Reverse engineering of a commodity Android RAT's Telegram exfiltration channel: payload extraction, protocol reconstruction from recovered code, derived indicators of compromise. Samples handled in isolation; no live infrastructure contacted.</p>
+        <p>Reverse engineering of a commodity Android RAT's Telegram exfiltration channel: payload extraction, protocol reconstruction from recovered code, derived indicators of compromise. Samples handled in isolation; no live infrastructure contacted. The deliverable is a detection artifact, not a screenshot of a control panel.</p>
         <div class="tag-row">
           <span class="tag">RE</span>
           <span class="tag">THREAT ANALYSIS</span>
           <span class="tag">IOC DERIVATION</span>
         </div>
-        <div class="project-thumb">protocol reconstruction — add later</div>
       </article>
 
       <!-- SMALL CARDS (active / in-progress / research) -->
       <article class="project project--small">
         <h3>PANOPTES</h3>
         <span class="status-badge status-badge--active">ACTIVE</span>
-        <p class="verified-date">updated 2026-09-28</p>
+        <p class="verified-date">133,480 records · 33.5 MB · updated 2026-09-28</p>
         <p>A cron-snapshot geospatial feed on edge workers — earthquakes, military and civil flights, satellites, fires, hazards, news — collected on schedule into a historical store. Deliberately inverted from per-request fan-out: the observation is the record, not a query. A national Algerian-scoped variant runs alongside it.</p>
         <div class="tag-row">
           <span class="tag">EDGE WORKERS</span>
@@ -180,7 +187,7 @@
         <h3>CyberRAG</h3>
         <span class="status-badge status-badge--active">ACTIVE</span>
         <p class="verified-date">updated 2026-09-29</p>
-        <p>A retrieval arsenal over WSTG, ATT&CK, exploitation references and my own field notes, rebuilt around one rule: abstention is a valid output. Keyed lookup data and conceptual corpora live in separate indexes so a 1,900-record CVE catalogue cannot poison concept queries, and a query term absent from the corpus is treated as evidence the corpus lacks the topic.</p>
+        <p>A retrieval arsenal over WSTG, ATT&amp;CK, exploitation references and my own field notes, rebuilt around one rule: abstention is a valid output. Keyed lookup data and conceptual corpora live in separate indexes so a 1,900-record CVE catalogue cannot poison concept queries, and a query term absent from the corpus is treated as evidence the corpus lacks the topic.</p>
         <div class="tag-row">
           <span class="tag">RAG</span>
           <span class="tag">IDF WEIGHTING</span>
@@ -190,19 +197,31 @@
       </article>
 
       <article class="project project--small">
-        <h3>Wormlab</h3>
+        <h3>Propagation lab</h3>
         <span class="status-badge status-badge--research">RESEARCH</span>
         <p class="verified-date">started 2026-09-28</p>
-        <p>An unanswered question: what is the real capability floor of small open-weight models used as autonomous cyber tooling? Existing public claims test one deliberately undisclosed model size and call it a result. I'm building the sweep — size against task fitness, below single-GPU scale, micro-policies versus language models, payload execution versus rhetoric.</p>
+        <p>A synthetic network of containerised hosts used to measure payload propagation under varying patch rates, detection latencies and topologies — infection curves, casualty counts, and out-of-distribution propagation detection. A defensive benchmark built from an offensive model, on the theory that you cannot design a filter for a propagation pattern you have never produced.</p>
         <div class="tag-row">
-          <span class="tag">RESEARCH</span>
-          <span class="tag">LITERATURE REVIEW</span>
-          <span class="tag">EXPERIMENTAL DESIGN</span>
+          <span class="tag">SIMULATION</span>
+          <span class="tag">DETECTION EVAL</span>
+          <span class="tag">OOD GENERALISATION</span>
         </div>
       </article>
 
       <article class="project project--small">
-        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas & communes</a></h3>
+        <h3>Cloud compute layer</h3>
+        <span class="status-badge status-badge--shipped">OPERATIONAL</span>
+        <p class="verified-date">cold start 2.6 s · measured 2026-10-21</p>
+        <p>Phone-class hardware with datacenter compute behind it: shared cloud sandboxes for anything that would OOM a 4 GB device — decompilation, fuzzing, Rust and Gradle builds — with swap provisioned before the first command, because the default box has 473 MB and no swap and will silently SIGKILL a compiler. A 38.7 s <code>cargo check</code> is the difference between a working environment and a plausible one.</p>
+        <div class="tag-row">
+          <span class="tag">ORCHESTRATION</span>
+          <span class="tag">OFFLOAD</span>
+          <span class="tag">COST ZERO</span>
+        </div>
+      </article>
+
+      <article class="project project--small">
+        <h3><a href="https://github.com/marwangpt237/algeria-wilayas">Algeria wilayas &amp; communes</a></h3>
         <span class="status-badge status-badge--shipped">SHIPPED</span>
         <p class="verified-date">verified 2026-09-28</p>
         <p>All 69 wilayas and their communes, updated for the 2026 administrative reform, bilingual naming, with a documented generation procedure — a reproducible build rather than a one-off export.</p>
@@ -216,8 +235,28 @@
     </div>
   </section>
 
+  <section id="evidence">
+    <p class="section-label">03 — EVIDENCE</p>
+    <p class="intro">Every number on this site has a row behind it: value, sample size, instrument, and what it does — and does not — prove. Numbers without method are decoration, so the limits are published next to the results.</p>
+    <dl class="defs">
+      <div>
+        <dt>284 ms</dt>
+        <dd>Process start to an established control channel on an OPPO A16s (Android 11, Helio G35). Measured across repeated cold starts, not a best-case single run.</dd>
+      </div>
+      <div>
+        <dt>48 s</dt>
+        <dd>Deterministic background reap interval on ColorOS, derived from 48 timestamped samples rather than a single observation. The number is stable enough to design around.</dd>
+      </div>
+      <div>
+        <dt>0</dt>
+        <dd>Control-transport interruptions across two full reap cycles after switching to a parked long-poll beacon, against 5–8 s gaps on the WebSocket path.</dd>
+      </div>
+    </dl>
+    <p class="note"><a href="/evidence/">FULL MEASUREMENT RECORD — 15 METRICS, LIMITS INCLUDED →</a></p>
+  </section>
+
   <section id="method">
-    <p class="section-label">03 — METHOD</p>
+    <p class="section-label">04 — METHOD</p>
     <dl class="defs">
       <div>
         <dt>Verify the target</dt>
@@ -236,6 +275,10 @@
         <dd>Procedure, timestamp, source and reproduction steps are published alongside the finding. Without them it is a screenshot, not research.</dd>
       </div>
       <div>
+        <dt>Publish the numbers</dt>
+        <dd>A capability claim with no measurement attached is marketing. Where a result cannot be published — because it would require releasing live offensive tooling — the method and the limits are published instead, and the omission is stated.</dd>
+      </div>
+      <div>
         <dt>Refuse early</dt>
         <dd>No written authorization, no work. Most of what keeps a project alive is refusing one job on day one instead of managing the consequences on day ninety.</dd>
       </div>
@@ -243,7 +286,7 @@
   </section>
 
   <section>
-    <p class="section-label">04 — IN PROGRESS</p>
+    <p class="section-label">05 — IN PROGRESS</p>
     <div class="work">
       <article class="project project--small">
         <h3>Critical infrastructure exposure census</h3>
@@ -260,7 +303,7 @@
         <h3>Small-model capability floor</h3>
         <span class="status-badge status-badge--research">RESEARCH</span>
         <p class="verified-date">started 2026-09-28</p>
-        <p>Model size swept against autonomous cyber-task fitness below single-GPU scale, establishing the quantitative floor that current public claims only gesture at.</p>
+        <p>Model size swept against autonomous cyber-task fitness below single-GPU scale, establishing the quantitative curve that current public claims only gesture at. Public claims test one model, withhold its size, and stop; the target here is the sweep — size against task fitness, micro-policies against language models, payload execution against rhetoric.</p>
         <div class="tag-row">
           <span class="tag">EXPERIMENTAL DESIGN</span>
           <span class="tag">PUBLICATION PLAN ATTACHED</span>
@@ -270,19 +313,20 @@
   </section>
 
   <section id="contact">
-    <p class="section-label">05 — CONTACT</p>
+    <p class="section-label">06 — CONTACT</p>
     <p class="email"><a href="mailto:contact@marwan-naili.me">contact@marwan-naili.me</a></p>
     <p class="ext">SECURITY — <a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a></p>
     <p class="ext">CODE — <a href="https://github.com/hellbound2307">github.com/hellbound2307</a></p>
-    <p class="ext">RESEARCH RECORD — <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></p>
+    <p class="ext">EVIDENCE — <a href="https://marwan-naili.me/evidence/">marwan-naili.me/evidence/</a></p>
+    <p class="ext">RESEARCH RECORD — <a href="https://marwan-naili.me/research/">marwan-naili.me/research/</a></p>
     <div class="disclosure-block">
       <p class="section-label">DISCLOSURE TERMS</p>
       <p>Security acknowledged within 3 business days. Publication after 90 days of silence, unless fixed.</p>
       <ul class="bullets">
         <li><b>Contact</b><span><a href="mailto:security@marwan-naili.me">security@marwan-naili.me</a> — machine-readable at <a href="https://marwan-naili.me/.well-known/security.txt">/.well-known/security.txt</a></span></li>
-        <li><b>Scope</b><span>Reports accepted in any infrastructure. Findings concerning Algerian critical infrastructure are routed through CERT-CC / ARPCE rather than published first.</span></li>
+        <li><b>Scope</b><span>Findings concerning Algerian critical infrastructure are routed to the responsible party and to CERT-CC / ARPCE before any publication.</span></li>
         <li><b>Timing</b><span>Acknowledgement within 3 business days. Publication after 90 days of vendor silence, unless a fix or mitigation exists.</span></li>
-        <li><b>Method</b><span>Non-intrusive by default — no exploitation, no authentication attempts, no denial of service, no state-affecting action.</span></li>
+        <li><b>Method</b><span>Self-directed against my own hardware, or against samples already in hand. Third-party infrastructure is touched only inside written scope.</span></li>
         <li><b>Promise</b><span>No legal action against researchers acting in good faith within this policy, and no attribution without consent.</span></li>
       </ul>
     </div>
@@ -290,7 +334,7 @@
 
   <footer>
     <span>© 2026 MARWAN NAILI — ALGIERS, DZ</span>
-    <a href="research/">RESEARCH RECORD →</a>
+    <a href="evidence/">MEASUREMENT RECORD →</a>
   </footer>
 
 </div>

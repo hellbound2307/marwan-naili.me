@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measurement Record — Marwan Naili</title>
+<meta name="description" content="Measured results with sample sizes, instruments and stated limits: device-class runtime, transport resilience, cloud compute layer, and public datasets.">
+<meta name="theme-color" content="#0b0c0d">
+<meta property="og:title" content="Measurement Record — Marwan Naili">
+<meta property="og:description" content="Every number with its sample size, its instrument, and what it does not prove.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://marwan-naili.me/evidence/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0c0d'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%235ee6b0' font-family='monospace'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <h1>Measurement Record</h1>
+      <p class="role">VALUES · SAMPLE SIZES · INSTRUMENTS · LIMITS</p>
+      <p class="status"><span class="dot"></span>ALGIERS, DZ · UTC+01:00</p>
+    </div>
+    <nav class="nav">
+      <a href="/">HOME</a>
+      <a href="/research/">RESEARCH</a>
+      <a href="#limits">LIMITS</a>
+    </nav>
+  </header>
+
+  <section>
+    <p class="intro">A capability claim with no measurement attached is marketing. This page exists because the difference between <i>"it works"</i> and <i>"it works 48 times out of 48, on this device, measured this way"</i> is the entire difference between a demo and a result.</p>
+    <p class="intro">Every row states what was measured, how many times, with what instrument, and what the number does <b>not</b> prove. Where a result cannot be published — because publishing it would mean releasing live offensive tooling — the method and the limits are published instead, and the omission is stated explicitly in <a href="#limits">Limits</a>.</p>
+  </section>
+
+  <section id="device">
+    <p class="section-label">A — DEVICE-CLASS RUNTIME</p>
+    <p class="note">Target: OPPO A16s / CPH2349 · Android 11 (API 30) · Helio G35 · 4 GB RAM. No root, no privileged bridge.</p>
+    <table class="mtable">
+      <thead>
+        <tr><th>Metric</th><th>Value</th><th>n</th><th>Instrument</th><th>What it proves</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Process start → control channel established</td><td class="num">284 ms</td><td>repeated cold starts</td><td>timestamps at native init and at transport connect</td><td>Startup is not dominated by JNI resolution or network setup; the budget is in the transport, not the bridge.</td></tr>
+        <tr><td>Background reap interval (ColorOS)</td><td class="num">~48 s</td><td>48</td><td>survival log, 1 Hz: pid present / absent</td><td>The kill interval is deterministic enough to design a persistence ladder around, rather than guess at.</td></tr>
+        <tr><td>Offline gap during reap — WebSocket transport</td><td class="num">5–8 s</td><td>2 full cycles</td><td>1 Hz log sampling</td><td>A stateful socket pays the full reap cost. Reconnection is not free.</td></tr>
+        <tr><td>Control interruptions after switching to parked long-poll</td><td class="num">0</td><td>60 s spanning 2 cycles</td><td>same log, same sampling rate</td><td>Server-side parking removes the gap without changing the kill behaviour — the fix was architectural, not a wake-lock.</td></tr>
+        <tr><td>Reconnect after transport loss</td><td class="num">0.3 s</td><td>repeated</td><td>connect/disconnect timestamps</td><td>Recovery cost is small once the process survives; process survival, not reconnect speed, is the real constraint.</td></tr>
+        <tr><td>Tor client cold bootstrap (aarch64, PRoot)</td><td class="num">~40 s</td><td>3</td><td>wall clock to first successful circuit</td><td>A Tor client must start at boot, not per task. Per-task bootstrap is a design error, not a performance problem.</td></tr>
+        <tr><td>Fresh circuit request</td><td class="num">10.9 s</td><td>repeated</td><td>request wall clock over onion</td><td>Rules out per-beacon circuit creation. This single number invalidates the naive onion-C2 design.</td></tr>
+        <tr><td>Hidden service reachable after start</td><td class="num">~2 min</td><td>3</td><td>poll until HTTP 200 over the full onion path</td><td>Descriptor publication is a fixed startup cost that belongs in install expectations, not in the bug list.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="cloud">
+    <p class="section-label">B — CLOUD COMPUTE LAYER</p>
+    <p class="note">Environment: shared cloud sandbox, x86_64, 2 vCPU, 473 MB RAM, no swap unless provisioned.</p>
+    <table class="mtable">
+      <thead>
+        <tr><th>Metric</th><th>Value</th><th>n</th><th>Instrument</th><th>What it proves</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sandbox creation → first command executed</td><td class="num">2.6 s</td><td>measured 2026-10-21</td><td>wall clock around create + exec</td><td>Cold compute is cheap enough to treat as per-task rather than persistent. That changes the architecture, not just the speed.</td></tr>
+        <tr><td><code>cargo check</code> with no swap</td><td class="num">OOM-kill</td><td>2</td><td>SIGKILL observed on <code>syn</code>, then <code>zerocopy</code></td><td>The default environment is not merely slow — it silently kills the compiler. Any build recipe that omits swap is fiction.</td></tr>
+        <tr><td><code>cargo check</code> with 4 GB swap, <code>-j 2</code></td><td class="num">38.7 s</td><td>1</td><td>wall clock, dependency tree incl. reqwest/hyper/rustls</td><td>The same workload goes from impossible to routine with one provisioning step. Environment, not hardware.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="data">
+    <p class="section-label">C — DATASETS &amp; BUILD RECORD</p>
+    <table class="mtable">
+      <thead>
+        <tr><th>Artifact</th><th>Value</th><th>Method</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Open CCTV corpus</td><td class="num">133,480 records · 33.5 MB</td><td>scheduled collection, JSONL, one record per camera</td><td>ACTIVE</td></tr>
+        <tr><td>Algeria administrative dataset</td><td class="num">69 wilayas + communes</td><td>documented generation procedure, bilingual naming</td><td><a href="https://github.com/marwangpt237/algeria-wilayas">PUBLIC</a></td></tr>
+        <tr><td>Minis X build record</td><td class="num">24 builds · 19 releases · 93 commits</td><td>CI artifacts + on-device verification per release</td><td><a href="https://github.com/hellbound2307/Minis-X">PUBLIC</a></td></tr>
+        <tr><td>SHADOW instrumentation</td><td class="num">93 commits</td><td>CI build, runtime verification on hardware</td><td><a href="https://github.com/hellbound2307/shadow">PUBLIC</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="limits">
+    <p class="section-label">D — LIMITS</p>
+    <p class="intro">Published next to the results, not buried. A number without its boundary is a claim.</p>
+    <dl class="defs">
+      <div>
+        <dt>One device class</dt>
+        <dd>The runtime figures come from a single handset model on ColorOS. Reap timing is vendor behaviour and will differ on other OEM builds. These are design inputs for this class of device, not universal constants.</dd>
+      </div>
+      <div>
+        <dt>Shared hardware</dt>
+        <dd>Cloud timings are from a free-tier shared sandbox, not dedicated capacity. They establish order of magnitude and failure mode; they are not benchmarks.</dd>
+      </div>
+      <div>
+        <dt>Emulated userspace</dt>
+        <dd>The Tor figures were measured under an aarch64 userspace emulation layer, which adds overhead not present on a native build. Treat them as an upper bound.</dd>
+      </div>
+      <div>
+        <dt>Not published</dt>
+        <dd>Payload internals, exfiltration channels and working escape primitives are not released. What is published is the measurement, the method, and the failure classes — which is the part other people can act on.</dd>
+      </div>
+      <div>
+        <dt>No third party</dt>
+        <dd>Nothing here was measured against infrastructure I do not own or have written scope for. Where a result would require touching someone else's system, it does not exist on this page.</dd>
+      </div>
+      <div>
+        <dt>Single-researcher bias</dt>
+        <dd>One person measuring their own system is not independent verification. Every figure above is reproducible from the stated method, and none of it should be taken as peer review.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>
+    <span>© 2026 MARWAN NAILI — ALGIERS, DZ</span>
+    <a href="/">← HOME</a>
+  </footer>
+
+</div>
+</body>
+</html>
