@@ -339,9 +339,20 @@ footer a:hover { color: var(--accent) }
 .mtable {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.5px;
+  font-size: 13px;
   display: table;
+  table-layout: fixed;
 }
+.mtable th:nth-child(1), .mtable td:nth-child(1) { width: 26% }
+.mtable th:nth-child(2), .mtable td:nth-child(2) { width: 11% }
+.mtable th:nth-child(3), .mtable td:nth-child(3) { width: 10% }
+.mtable th:nth-child(4), .mtable td:nth-child(4) { width: 23% }
+.mtable th:nth-child(5), .mtable td:nth-child(5) { width: 30% }
+.mtable--4 th:nth-child(1), .mtable--4 td:nth-child(1) { width: 30% }
+.mtable--4 th:nth-child(2), .mtable--4 td:nth-child(2) { width: 22% }
+.mtable--4 th:nth-child(3), .mtable--4 td:nth-child(3) { width: 30% }
+.mtable--4 th:nth-child(4), .mtable--4 td:nth-child(4) { width: 18% }
+.mtable--4 .num { white-space: normal }
 .mtable thead th {
   font: 10.5px/1.4 var(--font-mono);
   letter-spacing: .08em;
@@ -353,14 +364,14 @@ footer a:hover { color: var(--accent) }
   white-space: nowrap;
 }
 .mtable td {
-  padding: 11px 14px 11px 0;
+  padding: 10px 12px 10px 0;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 .mtable tbody tr:hover td { background: rgba(255,255,255,.015) }
-.mtable td:first-child { color: var(--text-primary); min-width: 190px }
+.mtable td:first-child { color: var(--text-primary) }
 .mtable td.num {
   font: 12.5px/1.5 var(--font-mono);
   color: var(--accent);
