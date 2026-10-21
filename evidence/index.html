@@ -37,7 +37,7 @@
   <section id="device">
     <p class="section-label">A — DEVICE-CLASS RUNTIME</p>
     <p class="note">Target: OPPO A16s / CPH2349 · Android 11 (API 30) · Helio G35 · 4 GB RAM. No root, no privileged bridge.</p>
-    <table class="mtable">
+    <div class="tbl-wrap"><table class="mtable">
       <thead>
         <tr><th>Metric</th><th>Value</th><th>n</th><th>Instrument</th><th>What it proves</th></tr>
       </thead>
@@ -51,13 +51,13 @@
         <tr><td>Fresh circuit request</td><td class="num">10.9 s</td><td>repeated</td><td>request wall clock over onion</td><td>Rules out per-beacon circuit creation. This single number invalidates the naive onion-C2 design.</td></tr>
         <tr><td>Hidden service reachable after start</td><td class="num">~2 min</td><td>3</td><td>poll until HTTP 200 over the full onion path</td><td>Descriptor publication is a fixed startup cost that belongs in install expectations, not in the bug list.</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <section id="cloud">
     <p class="section-label">B — CLOUD COMPUTE LAYER</p>
     <p class="note">Environment: shared cloud sandbox, x86_64, 2 vCPU, 473 MB RAM, no swap unless provisioned.</p>
-    <table class="mtable">
+    <div class="tbl-wrap"><table class="mtable">
       <thead>
         <tr><th>Metric</th><th>Value</th><th>n</th><th>Instrument</th><th>What it proves</th></tr>
       </thead>
@@ -66,12 +66,12 @@
         <tr><td><code>cargo check</code> with no swap</td><td class="num">OOM-kill</td><td>2</td><td>SIGKILL observed on <code>syn</code>, then <code>zerocopy</code></td><td>The default environment is not merely slow — it silently kills the compiler. Any build recipe that omits swap is fiction.</td></tr>
         <tr><td><code>cargo check</code> with 4 GB swap, <code>-j 2</code></td><td class="num">38.7 s</td><td>1</td><td>wall clock, dependency tree incl. reqwest/hyper/rustls</td><td>The same workload goes from impossible to routine with one provisioning step. Environment, not hardware.</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <section id="data">
     <p class="section-label">C — DATASETS &amp; BUILD RECORD</p>
-    <table class="mtable">
+    <div class="tbl-wrap"><table class="mtable">
       <thead>
         <tr><th>Artifact</th><th>Value</th><th>Method</th><th>Status</th></tr>
       </thead>
@@ -81,7 +81,7 @@
         <tr><td>Minis X build record</td><td class="num">24 builds · 19 releases · 93 commits</td><td>CI artifacts + on-device verification per release</td><td><a href="https://github.com/hellbound2307/Minis-X">PUBLIC</a></td></tr>
         <tr><td>SHADOW instrumentation</td><td class="num">93 commits</td><td>CI build, runtime verification on hardware</td><td><a href="https://github.com/hellbound2307/shadow">PUBLIC</a></td></tr>
       </tbody>
-    </table>
+    </table></div>
   </section>
 
   <section id="limits">
